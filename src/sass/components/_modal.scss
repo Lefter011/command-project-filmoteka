@@ -11,8 +11,6 @@
   pointer-events: all;
   visibility: visible;
 
-  background-color: var(--backdrop-color);
-
   @include default-transition(opacity);
   @include default-transition(visibility);
 
@@ -31,8 +29,11 @@
   padding: 40px 12px;
   background-color: var(--modal-color);
 
-  width: 800px;
-  height: auto;
+  width: 806px;
+  height: 558px;
+  &__close-icon {
+    margin: 0 auto;
+  }
 }
 
 .modal__close-icon {
@@ -44,6 +45,10 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  border: none;
+  background-color: inherit;
+  width: 30px;
+  height: 30px;
 }
 
 .modal__btn {
@@ -58,13 +63,15 @@
 }
 
 .modal__btn--orange {
-  background-color: var(--accent);
+  background-color: #ff6b01;
   color: var(--white);
   border: 1px solid transparent;
+  border-radius: 5px;
 }
 
 .modal__btn--light {
   background-color: var(--white);
   color: var(--dots-color);
   border: 1px solid var(--dots-color);
+  border-radius: 5px;
 }
