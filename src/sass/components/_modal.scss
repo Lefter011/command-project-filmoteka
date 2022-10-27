@@ -1,5 +1,4 @@
 .backdrop {
-  @extend %flex-center;
   position: fixed;
   top: 0;
   left: 0;
@@ -32,4 +31,40 @@
   padding: 40px 12px;
   background-color: var(--modal-color);
 
+  width: 800px;
+  height: auto;
+}
+
+.modal__close-icon {
+  stroke: var(--dots-color);
+}
+
+.modal__close-button {
+  @extend %flex-center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.modal__btn {
+  width: 136px;
+  height: 44px;
+  padding: 14px 10px 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: center;
+}
+
+.modal__btn--orange {
+  background-color: var(--accent);
+  color: var(--white);
+  border: 1px solid transparent;
+}
+
+.modal__btn--light {
+  background-color: var(--white);
+  color: var(--dots-color);
+  border: 1px solid var(--dots-color);
 }
