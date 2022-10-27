@@ -1,0 +1,39 @@
+:root {
+    // FONTS
+    --main-font: 'Roboto', sans-serif;
+
+    // COLORS
+    --dots-color: #000;
+    --header-white: #ffffff;
+    --main-background-color: #ffffff;
+    --secondary-background-color: #f7f7f7;
+    --arrow-pagination-color: #f7f7f7;
+    --backside-card: #f5f2f0;
+    --white: #ffffff;
+
+    --backdrop-color: rgba(0, 0, 0, 0.2);
+    --team-modal-background: rgb(246, 241, 237);
+
+    --main-text: #333333;
+    --accent: #ff6b08;
+    --accent-light: #e5882c;
+    --secondary: #545454;
+    --dark-mode-btn: #ffffff;
+    --modal-color: #ffffff;
+    --attention: #ff001b;
+    --theme-icon: #333333;
+
+    --failure-notify: rgba(173, 0, 17, 0.9);
+    --success-notify: rgba(35, 75, 35, 0.9);
+
+    --modal-input-border-color: rgba(33, 33, 33, 0.2);
+    --placeholder-text: rgba(117, 117, 117, 0.5);
+    --auth-modal-background: rgb(252, 251, 250);
+
+    --btn-close: rgba(0, 0, 0, 0.5);
+    --table-color: #8c8c8c;
+    --movie-card-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+        -23px 0 20px -23px rgba(0, 0, 0, 0.8), 23px 0 20px -23px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(0, 0, 0, 0.1);
+    --scroll-background: #f6f8f4;
+}
