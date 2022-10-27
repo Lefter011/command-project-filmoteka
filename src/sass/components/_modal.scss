@@ -34,21 +34,36 @@
   &__close-icon {
     margin: 0 auto;
   }
+  &__title {
+    font-size: 30px;
+    line-height: 1.16;
+    color: var(--dots-color);
+    margin-bottom: 20px;
+  }
+  &__close-icon {
+    stroke: var(--dots-color);
+  }
+
+  &__close-button {
+    @extend %flex-center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background-color: inherit;
+    width: 30px;
+    height: 30px;
+  }
 }
 
-.modal__close-icon {
-  stroke: var(--dots-color);
+.img-thumb {
+  width: 375px;
+  height: 478px;
 }
 
-.modal__close-button {
-  @extend %flex-center;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  border: none;
-  background-color: inherit;
-  width: 30px;
-  height: 30px;
+.list__item {
+  margin-bottom: 8px;
+  color: var(--table-color);
 }
 
 .modal__btn {
@@ -56,22 +71,64 @@
   height: 44px;
   padding: 14px 10px 12px;
   text-transform: uppercase;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
   text-align: center;
+  &--orange {
+    background-color: #ff6b01;
+    color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+
+  &--light {
+    background-color: var(--white);
+    color: var(--dots-color);
+    border: 1px solid var(--dots-color);
+    border-radius: 5px;
+  }
 }
 
-.modal__btn--orange {
-  background-color: #ff6b01;
-  color: var(--white);
-  border: 1px solid transparent;
+.modal__content {
+  display: flex;
+  gap: 16px;
   border-radius: 5px;
+  overflow: hidden;
 }
 
-.modal__btn--light {
-  background-color: var(--white);
+.main-modal-img {
+  object-fit: contain;
+}
+
+.list-info {
   color: var(--dots-color);
-  border: 1px solid var(--dots-color);
+  margin-bottom: 20px;
+}
+
+.accent-num {
+  display: inline-block;
+  background-color: #ff6b01;
   border-radius: 5px;
+  color: var(--white);
+  padding: 1px 9px;
+}
+
+.grey-num {
+  display: inline-block;
+  background-color: var(--secondary-background-color);
+  border-radius: 5px;
+  color: var(--dots-color);
+  padding: 1px 4px;
+}
+
+.modal__about {
+  margin-bottom: 20px;
+}
+
+.about__title {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.about__text {
+  line-height: 1.67;
 }
