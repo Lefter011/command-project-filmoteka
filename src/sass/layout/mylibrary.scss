@@ -1,0 +1,32 @@
+.mylibrary__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include mq ('tablet') {
+        gap: 32px;
+    }
+}
+
+.mylibrary__item {
+    width: 100%;
+
+    @include mq ('tablet'){
+        width: calc((100% - 32px)/2);
+    }
+
+        @include mq ('desktop') {
+            width: calc((100% - 64px)/3);
+        }
+}
+
+.mylibrary__item-text-wrapper{
+    display: flex;
+}
+
+.mylibrary__item-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+}
+
