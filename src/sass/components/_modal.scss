@@ -12,6 +12,8 @@
   pointer-events: all;
   visibility: visible;
 
+  background-color: var(--backdrop-color);
+
   @include default-transition(opacity);
   @include default-transition(visibility);
 
@@ -20,4 +22,14 @@
     pointer-events: none;
     visibility: hidden;
   }
+}
+
+.modal {
+  position: relative;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 40px 12px;
+  background-color: var(--modal-color);
+
 }
