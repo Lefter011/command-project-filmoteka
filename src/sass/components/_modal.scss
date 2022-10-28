@@ -1,5 +1,5 @@
 .backdrop {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -20,21 +20,46 @@
 }
 
 .modal {
-  border: 2px solid green;
-  position: relative;
-  top: 50%;
+  // border: 2px solid green;
+  position: absolute;
+  top: 20px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px 12px;
-  background-color: var(--modal-color);
+  transform: translateX(-50%);
+  padding: 48px 20px 40px;
+  overflow-y: auto;
+  z-index: 15;
+  @include mq(tablet) {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px 36px;
+  }
+  @include mq(desktop) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 12px;
+  }
 
-  width: 806px;
+  background-color: var(--modal-color);
+  width: 280px;
   height: auto;
+
+  @include mq(tablet) {
+    width: 704px;
+  }
+  @include mq(desktop) {
+    width: 806px;
+  }
+
   &__close-icon {
     margin: 0 auto;
   }
   &__title {
-    font-size: 30px;
+    font-size: 20px;
+    @include mq(desktop) {
+      font-size: 30px;
+    }
+
     line-height: 1.16;
     color: var(--dots-color);
   }
@@ -48,6 +73,7 @@
     top: 8px;
     right: 8px;
     border: none;
+    border-radius: 50%;
     background-color: inherit;
     width: 30px;
     height: 30px;
@@ -67,8 +93,17 @@
 }
 
 .img-thumb {
-  width: 375px;
-  height: 478px;
+  width: 240px;
+  height: auto;
+  @include mq(tablet) {
+    width: 264px;
+    height: 373px;
+  }
+  @include mq(desktop) {
+    width: 375px;
+    height: 478px;
+  }
+
   flex: 0 0 auto;
   overflow: hidden;
   border-radius: 5px;
@@ -81,19 +116,32 @@
 }
 
 .stats__name {
-  padding-right: 80px;
+  padding-right: 40px;
+  @include mq(tablet) {
+    padding-right: 80px;
+  }
   color: var(--table-color);
 }
 
 .modal__btn {
-  width: 136px;
+  width: 110px;
   height: 44px;
-  padding: 14px 10px 12px;
+  @include mq(tablet) {
+    width: 125px;
+  }
+  @include mq(desktop) {
+    width: 136px;
+  }
   text-transform: uppercase;
   text-align: center;
   font-size: 12px;
   @include default-transition(box-shadow);
   &--orange {
+    padding: 6px 27px;
+    @include mq(tablet) {
+      padding: 14px 10px 12px;
+    }
+    
     background-color: #ff6b01;
     color: var(--white);
     border: 1px solid transparent;
@@ -102,6 +150,13 @@
   }
 
   &--light {
+    padding: 12px 12px;
+    @include mq(tablet) {
+      padding: 14px 7px 12px;
+    }
+    @include mq(desktop) {
+      padding: 14px 8px 12px;
+    }
     background-color: var(--white);
     color: var(--dots-color);
     border: 1px solid var(--dots-color);
@@ -111,7 +166,15 @@
 
 .modal__content {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 20px;
+  @include mq(tablet) {
+    flex-direction: row;
+    gap: 68px;
+  }
+  @include mq(desktop) {
+    gap: 16px;
+  }
 }
 
 .main-modal-img {
@@ -142,6 +205,7 @@
 .about__title {
   text-transform: uppercase;
   margin-bottom: 8px;
+  font-size: 12px;
 }
 
 .about__text {
