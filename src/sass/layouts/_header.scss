@@ -1,50 +1,66 @@
 .header {
+    width: 100%;
     height: 230px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 321px) {
         height: 216px;
     }
-
-    .container {
-        padding-top: 40px;
+}
+.gen {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    @media screen and (min-width: 768px) {
+        width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    
+    @media screen and (min-width: 1280px) {
+        width: 1280px;
     }
 }
 
 .header--index {
-    max-width: 320px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url(/src/img/header/mobile/header-index/background-img-mob.jpg);
+        url(../img/header/mobile/header-index/background-img-mob.jpg);
     background-position: center;
+    background-size: contain;
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(/src/img/header/mobile/header-index/background-img-mob@2x.jpg);
+            url(../img/header/mobile/header-index/background-img-mob@2x.jpg);
+        
     }
 
     @media screen and (min-width: 321px) and (max-width: 768px) {
-        max-width: 768px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(/src/img/header/tablet/header-index/background-img-tab.jpg);
+            url(../img/header/tablet/header-index/background-img-tab.jpg);
 
         @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
             background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-                url(/src/img/header/tablet/header-index/background-img-tab@2x.jpg);
+                url(../img/header/tablet/header-index/background-img-tab@2x.jpg);
+
         }
     }
 
     @media screen and (min-width: 769px) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(/src/img/header/desktop/header-index/background-img-desk.jpg);
+            url(../img/header/desktop/header-index/background-img-desk.jpg);
 
         @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
             background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-                url(/src/img/header/desktop/header-index/background-img-desk@2x.jpg);
+                url(../img/header/desktop/header-index/background-img-desk@2x.jpg);
         }
     }
 }
