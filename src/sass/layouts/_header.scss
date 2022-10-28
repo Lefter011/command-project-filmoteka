@@ -1,0 +1,193 @@
+.header {
+    height: 230px;
+
+    @media screen and (min-width: 768px) {
+        height: 216px;
+    }
+
+    .container {
+        padding-top: 40px;
+    }
+}
+
+.header--index {
+    max-width: 320px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/src/img/header/mobile/header-index/background-img-mob.jpg);
+    background-position: center;
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+            url(/src/img/header/mobile/header-index/background-img-mob@2x.jpg);
+    }
+
+    @media screen and (min-width: 321px) and (max-width: 768px) {
+        max-width: 768px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+            url(/src/img/header/tablet/header-index/background-img-tab.jpg);
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+                url(/src/img/header/tablet/header-index/background-img-tab@2x.jpg);
+        }
+    }
+
+    @media screen and (min-width: 769px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+            url(/src/img/header/desktop/header-index/background-img-desk.jpg);
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+                url(/src/img/header/desktop/header-index/background-img-desk@2x.jpg);
+        }
+    }
+}
+
+.page-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 54px;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 40px;
+    }
+}
+
+.logo__icon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+    margin-right: 112px;
+
+    @media screen and (min-width: 768px) {
+        margin-right: 8px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-right: 10px;
+    }
+}
+
+.logo__link {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: #ffffff;
+    margin-right: 112px;
+
+    @media screen and (min-width: 768px) {
+        margin-right: 387px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-right: 898px;
+    }
+}
+
+.nav__list {
+    display: flex;
+    height: 24px;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__item:not(:last-child) {
+    margin-right: 40px;
+}
+
+.nav__link {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF001B;
+}
+
+.form-thumb {
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    display: inline-block;
+    position: relative;
+}
+
+.search-input {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.5px solid #FFFFFF;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    width: 280px;
+
+    @media screen and (min-width: 768px) {
+        width: 336px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 394px;
+    }
+
+    &::placeholder {
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.search-btn {
+    position: absolute;
+    display: inline-block;
+    bottom: 4px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 0;
+
+}
+
+.search-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    fill: #ffffff;
+}
