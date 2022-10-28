@@ -92,20 +92,19 @@
     background-color: #FF6B08;
 
     @include mq ('desktop') {
-            height: 24px;
+            height: 20px;
             width: 40px;
         }
 
 }
 
 .mylibrary__item-reting {
-    line-height: 14px;
     text-align: center;
     color: #FFFFFF;
-    
-    @include mq ('desktop') {
-            line-height: 20px;
-        }
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
 }
 
 

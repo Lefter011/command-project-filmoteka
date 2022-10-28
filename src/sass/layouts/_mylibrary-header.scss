@@ -1,0 +1,148 @@
+.mylibrary-header{
+    height: 230px;
+    background-color: #0000008F;
+    background-image: url(/src/img/library-header/librery_header_mob_1x.jpg);
+    background-size: 100%;
+    background-repeat: repeat;
+
+    @include mq ('retina') {
+        background-image: url(/src/img/library-header/librery_header_mob_2x.jpg);
+        }
+
+    @include mq ('tablet') {
+        height: 219px;
+        background-image: url(/src/img/library-header/librery_header_tab_1x.jpg);
+
+        @include mq ('retina') {
+            background-image: url(/src/img/library-header/librery_header_tab_2x.jpg);
+        }
+    }
+
+    @include mq ('desktop') {
+        height: 216px;
+        background-image: url(/src/img/library-header/librery_header_desk_1x.jpg);
+
+        @include mq ('retina') {
+            background-image: url(/src/img/library-header/librery_header_desk_2x.jpg);
+        }
+    }
+}
+
+.mylibrary-header__logo-img{
+    width: 24px;
+    height: 24px;
+    
+}
+
+.mylibrary-header__text-link{
+    display: none;
+
+    @include mq ('tablet') {
+            display: block;
+            margin-left: 10px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1.17;
+            color: #ffffff;
+    }
+}
+
+.filmoteka__navigation {
+    display: flex;
+    padding-top: 40px;
+    align-items: center;
+} 
+
+.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF001B;
+}
+
+.filmoteka__navigation-list{
+    margin-left: auto;
+    color: #FFFFFF;
+    display: flex;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+}
+
+.filmoteka__navigation-item {
+    position: relative;
+}
+
+.filmoteka__navigation-item:not(:last-child){
+    margin-right: 39px;
+}
+
+.mylibrary-header__navigation {
+    margin-top: 62px;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq ('tablet') {
+            justify-content: center;
+            
+        }
+    
+}
+
+.watched-btn{
+    width: 130px;
+    height: 44px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #FFFFFF;
+    border-radius: 5px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    border: 1px  solid #ffffff;
+
+    @include mq ('tablet') {
+        margin-right: 32px;
+        width: 152px;
+    }
+
+    @include mq ('desktop') {
+        margin-right: 16px;
+        width: 148px;
+    }
+}
+
+
+.queue-btn{
+    width: 130px;
+    height: 44px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #FFFFFF;
+    border-radius: 5px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #FF6B01;
+    border: none;
+
+    @include mq ('tablet') {
+        width: 152px;
+    }
+
+    @include mq ('desktop') {
+        width: 148px;
+    }
+}
+
+.watched-btn:hover, .watched-btn:focus,
+.queue-btn:hover, .queue-btn:focus {
+    -webkit-box-shadow: 20px 18px 41px 0px rgba(219, 103, 31, 1);
+    -moz-box-shadow: 20px 18px 41px 0px rgba(219, 103, 31, 1);
+    box-shadow: 20px 18px 41px 0px rgba(219, 103, 31, 1);
+}
