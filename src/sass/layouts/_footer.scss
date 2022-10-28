@@ -117,7 +117,9 @@
     border-radius: 4px;
 
     @media screen and (min-width: 480px) {
-        width: 80%;
+        & {
+            width: 80%;
+        }
     }
    
 }
@@ -163,8 +165,10 @@
     flex-direction: column;   
    
     @media screen and (min-width: 768px){     
-        display: flex;
-        justify-content: space-around;       
+       & {
+            display: flex;
+            justify-content: space-around;
+       }    
 }
 }
 
@@ -176,11 +180,13 @@
 .footer__modal-author {
     margin-right: 20px;
     @media screen and (min-width: 480px) {
+            &{
                 margin-right: 40px;
-            }
+              } 
+        }
     @media screen and (min-width: 768px) {
-                margin-right: 50px;
-            }
+            &{margin-right: 30px;} 
+        }
    
 }
 
@@ -188,13 +194,16 @@
     color: var(--theme-icony);
 }
 
-footer__modal-name {
-    color: var(--secondary);
-    @media screen and (min-width: 480px) {
-    font-size: 18px;
-}
-}
+.footer__modal-name {
+    color: var(--main-text);
 
+    @media screen and (min-width: 480px) {
+        & {
+            font-size: 18px;
+    }
+}   
+
+}
 .footer__modal-role {
     color: var(--main-text);
 }
