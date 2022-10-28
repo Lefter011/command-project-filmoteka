@@ -1,16 +1,31 @@
-(() => {
+function footermodal() {
   const refs = {
-    openModalBtn: document.querySelector("[data-modal-open]"),
-    closeModalBtn: document.querySelector("[data-modal-close]"),
-    footermodal: document.querySelector("[data-modal]"),    
-    body:  document.querySelector("body"),
+    openFooterModal: document.getElementById("data-modal-open"),
+    closeFooterModalBtn: document.getElementById("data-modal-close"),
+    modalfooter: document.getElementById("data-modal"),
+    body: document.querySelector("body"),
   };
-
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
-
-  function toggleModal() {
-    refs.footermodal.classList.toggle("visually-hidden");
-    refs.body.classList.toggle("no-scroll");
+  
+  onclick = function () {
+    modalfooter.style.display = "block";
   }
-})();
+
+  close.onclick = function () {
+    modalfooter.style.display = "none";
+
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+      // refs.openFooterModal.addEventListener("click", toggleModal);
+      // refs.closeFooterModalBtn.addEventListener("click", toggleModal);
+
+      // function toggleModal() {
+      //   refs.modal.classList.toggle("visually-hidden");
+      //    refs.body.classList.toggle("no-scroll");
+      //  };
+    }
+  }
+}
+ 

@@ -103,7 +103,8 @@
 
 .footer__modal {
     padding: 40px;
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     width: 80%;
     background-color:var(--backdrop-color);
     top: 50%;
