@@ -148,8 +148,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    fill: var(--accent);
-    ;
+    fill: var(--accent);   
     transition: fill;
     transition-duration: 350ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -163,11 +162,9 @@
 .footer__modal-wrap {
     flex-direction: column;   
    
-    @media screen and (min-width: 768px){
-        &{
-            display: flex;
-            justify-content: space-around;
-        }  
+    @media screen and (min-width: 768px){     
+        display: flex;
+        justify-content: space-around;       
 }
 }
 
@@ -183,7 +180,7 @@
             }
     @media screen and (min-width: 768px) {
                 margin-right: 50px;
-            } 
+            }
    
 }
 
@@ -193,7 +190,7 @@
 
 footer__modal-name {
     color: var(--secondary);
-@media screen and (min-width: 480px) {
+    @media screen and (min-width: 480px) {
     font-size: 18px;
 }
 }
