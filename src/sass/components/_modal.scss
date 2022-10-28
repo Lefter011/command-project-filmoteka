@@ -8,6 +8,7 @@
   opacity: 1;
   pointer-events: all;
   visibility: visible;
+  background-color: rgba(0, 0, 0, 0.2);
 
   @include default-transition(opacity);
   @include default-transition(visibility);
@@ -17,17 +18,22 @@
     pointer-events: none;
     visibility: hidden;
   }
+
+  &.is-hidden .modal__film-card {
+    opacity: 0;
+  }
 }
 
-.modal {
-  // border: 2px solid green;
+.modal__film-card {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 1;
   padding: 48px 20px 40px;
   overflow-y: auto;
   z-index: 15;
+  @include default-transition(opacity);
   @include mq(tablet) {
     top: 20%;
     left: 50%;
@@ -50,46 +56,45 @@
   @include mq(desktop) {
     width: 806px;
   }
+}
 
-  &__close-icon {
-    margin: 0 auto;
-  }
-  &__title {
-    font-size: 20px;
-    @include mq(desktop) {
-      font-size: 30px;
-    }
+.modal__close-icon {
+  margin: 0 auto;
+  stroke: var(--dots-color);
+}
 
-    line-height: 1.16;
-    color: var(--dots-color);
-  }
-  &__close-icon {
-    stroke: var(--dots-color);
+.modal__title {
+  font-size: 20px;
+  @include mq(desktop) {
+    font-size: 30px;
   }
 
-  &__close-button {
-    @extend %flex-center;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    border: none;
-    border-radius: 50%;
-    background-color: inherit;
-    width: 30px;
-    height: 30px;
-    @include default-transition(box-shadow);
-  }
+  line-height: 1.16;
+  color: var(--dots-color);
+}
 
-  &__info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  &__buttons {
-    display: flex;
-  }
+.modal__close-button {
+  @extend %flex-center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  border-radius: 50%;
+  background-color: inherit;
+  width: 30px;
+  height: 30px;
+  @include default-transition(box-shadow);
+}
+
+.modal__info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.modal__buttons {
+  display: flex;
 }
 
 .img-thumb {
@@ -141,7 +146,7 @@
     @include mq(tablet) {
       padding: 14px 10px 12px;
     }
-    
+
     background-color: #ff6b01;
     color: var(--white);
     border: 1px solid transparent;
