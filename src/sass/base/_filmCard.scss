@@ -59,9 +59,9 @@
 }
 
 .card__name {
-    color: #000;
+    color: var(--dots-color);
 }
 
 .card__info {
-    color: #FF6B08;
+    color: var(--accent);
 }
