@@ -227,3 +227,20 @@
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+body.modal-shown {
+  position: fixed;
+  overflow: hidden;
+  & .backdrop {
+    position: fixed;
+    overflow-y: scroll;
+    inset: 0;
+  }
+}
+
+.modal__film-card.is-open {
+  position: relative;
+  display: block;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+}
