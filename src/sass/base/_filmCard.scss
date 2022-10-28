@@ -1,0 +1,67 @@
+.gallery-list {
+    cursor: pointer;
+    border-radius: 5px;
+
+    @media screen and (max-width: 767px) {
+        &not :last-child {
+            // margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-left: 32px;
+        margin-bottom: 32px;
+        flex-basis: calc((100 - 2 * 32px) / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-left: 16px;
+        margin-bottom: 32px;
+        flex-basis: calc((100 - 3 * 16) / 3);
+    }
+}
+
+.gallary__titular {
+    width: 100%;
+    height: 402px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+    @media screen and (min-width: 768px) {
+        height: 495px;
+        margin-bottom: 8px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        height: 449px;
+        margin-bottom: 12px;
+    }
+}
+
+.gallary__info {
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+        line-height: 1.33;
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+}
+
+.card__name {
+    color: #000;
+}
+
+.card__info {
+    color: #FF6B08;
+}
