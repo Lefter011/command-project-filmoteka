@@ -15,21 +15,28 @@
       </div>
       <div class="modal__info-container">
         <h2 class="modal__title">A FISTFUL OF LEAD</h2>
-        <ul class="modal__list">
-          <li class="list__item">Vote / Votes</li>
-          <li class="list__item">Popularity</li>
-          <li class="list__item">Original Title</li>
-          <li class="list__item">Genre</li>
-        </ul>
-        <ul class="list-info">
-          <li class="info__item">
-            <span class="accent-num">7.3</span> /
-            <span class="grey-num">1200</span>
-          </li>
-          <li class="info__item">200.4</li>
-          <li class="info__item">A FISTFUL OF LEAD</li>
-          <li class="info__item">Western</li>
-        </ul>
+        <table class="modal__stats">
+          <tr class="stats__row">
+            <td class="stats__name">Vote</td>
+            <td class="stats__value">
+              <span class="accent-num">7.3</span> /
+              <span class="grey-num">1200</span>
+            </td>
+          </tr>
+          <tr class="stats__row">
+            <td class="stats__name">Popularity</td>
+            <td class="stats__value">1200</td>
+          </tr>
+          <tr class="stats__row">
+            <td class="stats__name">Original Title</td>
+            <td class="stats__value">A FISTFUL OF LEAD</td>
+          </tr>
+          <tr class="stats__row">
+            <td class="stats__name">Genre</td>
+            <td class="stats__value">Western</td>
+          </tr>
+        </table>
+
         <section class="modal__about">
           <h3 class="about__title">About</h3>
           <p class="about__text">
@@ -43,12 +50,14 @@
             lead... they’ve been double crossed – but by who and how?
           </p>
         </section>
-        <button type="button" class="modal__btn modal__btn--orange">
-          add to watched
-        </button>
-        <button type="button" class="modal__btn modal__btn--light">
-          add to queue
-        </button>
+        <div class="modal__buttons">
+          <button type="button" class="modal__btn modal__btn--orange">
+            add to watched
+          </button>
+          <button type="button" class="modal__btn modal__btn--light">
+            add to queue
+          </button>
+        </div>
       </div>
     </div>
   </div>
