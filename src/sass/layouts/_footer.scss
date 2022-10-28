@@ -1,7 +1,7 @@
 .footer {
     padding-top: 30px;
     padding-bottom: 25px;
-    background-color: --secondary-background-color;
+    background-color: var(--secondary-background-color);
 }
 
 .footer-rights {
@@ -64,7 +64,7 @@
 .heart-icon {
     margin-right: 10px;
     margin-left: 10px;
-    fill: --accent;
+    fill: var(--accent);
 }
 
 .footer-rights__students {
@@ -82,16 +82,7 @@
 }
 
 .footer-rights__link {
-    color: #545454;
-}
-
-.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: visibility, opacity;
-    transition-duration: 350ms, 350ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--secondary);
 }
 
 .backdrop {
@@ -100,21 +91,21 @@
     height: 100%;
     top: 0;
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--backdrop-color);
     transition: opacity, visibility;
     transition-duration: 250ms, 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden .modal {
+.backdrop.visually-hidden .footer__modal {
     transform: translate(-50%, -50%) scale(0.7);
 }
 
-.modal {
+.footer__modal {
     padding: 40px;
     position: absolute;
     width: 80%;
-    background-color: --white;
+    background-color:var(--backdrop-color);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
@@ -129,7 +120,7 @@
     overflow: hidden;
 }
 
-.modal__btn {
+.footer__modal-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -146,11 +137,11 @@
     align-items: center;
 }
 
-.modal__icon {
+.footer__modal-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    fill: --accent;
+    fill: var(--accent);
     ;
     transition: fill;
     transition-duration: 350ms;
@@ -158,6 +149,6 @@
 
     &:hover,
     &:focus {
-        fill: --accent-light;
+        fill: var(--accent-light);
     }
 }

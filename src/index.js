@@ -1,3 +1,3 @@
 import './js/utils/handlebars-helpers';
-import './js/modal';
+import './js/footer_modal';
 // import { localStorageFilms } from 
