@@ -8,5 +8,14 @@
 @import './base/container';
 @import './base/reset-styles';
 
+
 @import './layouts/footer';
+
+@import './layouts/header';
+@import './layouts/hero';
+@import './layouts/mylibrary';
+@import './layouts/mylibrary-header';
+
+@import './components/modal';
+@import './pagination';
 
