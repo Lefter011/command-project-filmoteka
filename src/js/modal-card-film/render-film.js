@@ -1,4 +1,3 @@
-import { ApiService } from '../ApiService';
 import { refs } from './modal-refs';
 import { films } from './random-films';
 
@@ -34,14 +33,31 @@ function renderFilmCard(obj) {
   );
   markup = `<div class="modal__content">
   <div class="img-thumb">
-  <picture class="main-modal-img">
-        <source srcset="${BASE_PICTURE_URL}${desktopSize}${poster_path}"
-            media="(min-width: 1024px)">
-        <source srcset="${BASE_PICTURE_URL}${tabletSize}${poster_path} 1x, ${BASE_PICTURE_URL}${desktopSize}${poster_path} 2x" media="(min-width: 768px)">
-        <source srcset="${BASE_PICTURE_URL}${mobileSize}${poster_path} 1x, ${BASE_PICTURE_URL}${tabletSize}${poster_path} 2x"
-            media="(min-width: 320px)">
-        
-        <img src="${BASE_PICTURE_URL}${mobileSize}${poster_path}" alt="${title}" class="main-modal-img"/>
+    <picture class="main-modal-img">
+      <source
+        srcset="${BASE_PICTURE_URL}${desktopSize}${poster_path}"
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="
+          ${BASE_PICTURE_URL}${tabletSize}${poster_path}  1x,
+          ${BASE_PICTURE_URL}${desktopSize}${poster_path} 2x
+        "
+        media="(min-width: 768px)"
+      />
+      <source
+        srcset="
+          ${BASE_PICTURE_URL}${mobileSize}${poster_path} 1x,
+          ${BASE_PICTURE_URL}${tabletSize}${poster_path} 2x
+        "
+        media="(min-width: 320px)"
+      />
+
+      <img
+        src="${BASE_PICTURE_URL}${mobileSize}${poster_path}"
+        alt="${title}"
+        class="main-modal-img"
+      />
     </picture>
   </div>
   <div class="modal__info-container">
@@ -70,14 +86,21 @@ function renderFilmCard(obj) {
 
     <section class="modal__about">
       <h3 class="about__title">About</h3>
-      <p class="about__text">${overview}
-      </p>
+      <p class="about__text">${overview}</p>
     </section>
     <div class="modal__buttons">
-      <button type="button" class="modal__btn modal__btn--orange data-modal-watched">
+      <button
+        type="button"
+        class="modal__btn modal__btn--orange"
+        data-modal-watched
+      >
         add to watched
       </button>
-      <button type="button" class="modal__btn modal__btn--light data-modal-queue">
+      <button
+        type="button"
+        class="modal__btn modal__btn--light"
+        data-modal-queue
+      >
         add to queue
       </button>
     </div>
@@ -91,4 +114,4 @@ function addMarkupToCard(markup) {
   refs.containerForInfo.innerHTML = markup;
 }
 
-renderFilmCard(films[12]);
+renderFilmCard(films[1]);

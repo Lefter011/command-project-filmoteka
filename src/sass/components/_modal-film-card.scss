@@ -9,18 +9,17 @@
   pointer-events: all;
   visibility: visible;
   background-color: rgba(0, 0, 0, 0.2);
-
   @include default-transition(opacity);
-  @include default-transition(visibility);
 
   &.is-hidden {
     opacity: 0;
+    @include default-transition(opacity);
     pointer-events: none;
-    visibility: hidden;
   }
 
   &.is-hidden .modal__film-card {
     opacity: 0;
+    @include default-transition(opacity);
   }
 }
 
@@ -30,19 +29,19 @@
   left: 50%;
   transform: translateX(-50%);
   opacity: 1;
+  @include default-transition(opacity);
   padding: 48px 20px 40px;
   overflow-y: auto;
   z-index: 15;
-  @include default-transition(opacity);
   @include mq(tablet) {
     top: 20%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
     padding: 40px 36px;
   }
   @include mq(desktop) {
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     padding: 40px 12px;
   }
 

@@ -690,27 +690,27 @@ img {
   visibility: visible;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
-  visibility: hidden;
 }
 .backdrop.is-hidden .modal__film-card {
   opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal__film-card {
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 48px 20px 40px;
   overflow-y: auto;
   z-index: 15;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--modal-color);
   width: 280px;
   height: auto;
@@ -719,14 +719,14 @@ img {
   .modal__film-card {
     top: 20%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
     padding: 40px 36px;
   }
 }
 @media screen and (min-width: 1280px) {
   .modal__film-card {
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     padding: 40px 12px;
   }
 }
@@ -784,6 +784,7 @@ img {
 .img-thumb {
   width: 240px;
   height: auto;
+  max-height: 100%;
   flex: 0 0 auto;
   overflow: hidden;
   border-radius: 5px;
@@ -791,13 +792,11 @@ img {
 @media screen and (min-width: 768px) {
   .img-thumb {
     width: 264px;
-    height: 373px;
   }
 }
 @media screen and (min-width: 1280px) {
   .img-thumb {
     width: 375px;
-    height: 478px;
   }
 }
 
@@ -886,6 +885,8 @@ img {
 .main-modal-img {
   -o-object-fit: contain;
      object-fit: contain;
+  max-width: 100%;
+  border-radius: 5px;
 }
 
 .list-info {
@@ -931,12 +932,18 @@ img {
 }
 
 body.modal-shown {
-  position: fixed;
   overflow: hidden;
+}
+body.modal-shown .backdrop {
+  position: fixed;
+  overflow-y: scroll;
 }
 
 .modal__film-card.is-open {
+  position: relative;
   display: block;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
 }
 
 .pagination-container {

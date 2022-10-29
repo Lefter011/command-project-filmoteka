@@ -4,7 +4,5 @@ export const refs = {
   closeBtn: document.querySelector('button[data-modal-close]'),
   backdrop: document.querySelector('div[data-modal]'),
   modal: document.querySelector('div.js-movie-card'),
-  containerForInfo: document.querySelector('div.modal__content'),
-  queueBtn: document.querySelector('button[data-modal-queue]'),
-  watchedBtn: document.querySelector('button[data-modal-watched]'),
+  containerForInfo: document.querySelector('div.modal__container'),
 };
