@@ -100,13 +100,12 @@
 .img-thumb {
   width: 240px;
   height: auto;
+  max-height: 100%;
   @include mq(tablet) {
     width: 264px;
-    height: 373px;
   }
   @include mq(desktop) {
     width: 375px;
-    height: 478px;
   }
 
   flex: 0 0 auto;
@@ -183,9 +182,8 @@
 }
 
 .main-modal-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  object-fit: contain;
+  max-width: 100%;
   border-radius: 5px;
 }
 
@@ -244,6 +242,6 @@ body.modal-shown {
 .modal__film-card.is-open {
   position: relative;
   display: block;
-  overflow-y: scroll;
+  overflow-y: auto;
   overscroll-behavior-y: contain;
 }

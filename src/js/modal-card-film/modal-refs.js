@@ -5,18 +5,6 @@ export const refs = {
   backdrop: document.querySelector('div[data-modal]'),
   modal: document.querySelector('div.js-movie-card'),
   containerForInfo: document.querySelector('div.modal__content'),
+  queueBtn: document.querySelector('button[data-modal-queue]'),
+  watchedBtn: document.querySelector('button[data-modal-watched]'),
 };
-
-console.log(refs.containerForInfo);
-
-refs.openBtn.addEventListener('click', onOpenBtnClick);
-function onOpenBtnClick() {
-  refs.backdrop.classList.remove('is-hidden');
-  refs.modal.classList.add('is-open');
-  refs.body.classList.add('modal-shown');
-}
-
-refs.closeBtn.addEventListener('click', onCloseBtnClick);
-function onCloseBtnClick() {
-  refs.backdrop.classList.add('is-hidden');
-}

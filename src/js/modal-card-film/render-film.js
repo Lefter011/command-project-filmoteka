@@ -1,6 +1,6 @@
 import { ApiService } from '../ApiService';
-import { refs } from '../modal-card-film/modal-refs';
-import { films } from '../modal-card-film/random-films';
+import { refs } from './modal-refs';
+import { films } from './random-films';
 
 const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/';
 const desktopSize = 'original';
@@ -64,7 +64,7 @@ function renderFilmCard(obj) {
       </tr>
       <tr class="stats__row">
         <td class="stats__name">Genre</td>
-        <td class="stats__value">Western</td>
+        <td class="stats__value">????</td>
       </tr>
     </table>
 
@@ -74,10 +74,10 @@ function renderFilmCard(obj) {
       </p>
     </section>
     <div class="modal__buttons">
-      <button type="button" class="modal__btn modal__btn--orange">
+      <button type="button" class="modal__btn modal__btn--orange data-modal-watched">
         add to watched
       </button>
-      <button type="button" class="modal__btn modal__btn--light">
+      <button type="button" class="modal__btn modal__btn--light data-modal-queue">
         add to queue
       </button>
     </div>
@@ -90,3 +90,5 @@ function renderFilmCard(obj) {
 function addMarkupToCard(markup) {
   refs.containerForInfo.innerHTML = markup;
 }
+
+renderFilmCard(films[12]);
