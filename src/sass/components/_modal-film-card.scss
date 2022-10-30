@@ -229,7 +229,6 @@
 }
 
 body.modal-shown {
-  overflow: hidden;
   & .backdrop {
     position: fixed;
     overflow-y: scroll;

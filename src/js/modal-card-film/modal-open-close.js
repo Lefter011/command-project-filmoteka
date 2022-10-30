@@ -50,6 +50,6 @@ function saveKeysToStorage() {
   localStore.save(WATCHED_KEY, savedWatched);
 
   let savedLine = localStore.load(LINE_KEY);
-  LINE_KEY = LINE_KEY ? LINE_KEY : [];
+  savedLine = savedLine ? savedLine : [];
   localStore.save(LINE_KEY, savedLine);
 }
