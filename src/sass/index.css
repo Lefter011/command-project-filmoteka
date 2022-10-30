@@ -974,6 +974,12 @@ button {
   background-position: 50%;
   margin-right: 16px;
 }
+@media screen and (max-width: 769px) {
+  .page-btn.prev-page,
+.page-btn.next-page {
+    display: none;
+  }
+}
 
 .page-btn.end-page {
   border-radius: 5px;
