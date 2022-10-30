@@ -1,4 +1,9 @@
-import { containerGallery, searchFormRef, notifyRef } from './utils/refs';
+import {
+  containerGallery,
+  searchFormRef,
+  notifyARef,
+  notifyBRef,
+} from './utils/refs';
 import { urls } from './utils/config';
 import ApiService from './ApiService';
 import { getGenres } from './utils/getGenres';
@@ -13,13 +18,17 @@ async function onSubmit(event) {
     .trim()
     .toLowerCase();
   if (!searchQuery) {
-    alert('Enter a search query!');
+    notifyARef.classList.add('visually-hidden');
+    notifyBRef.classList.remove('visually-hidden');
     return;
   }
   const data = await api.getMoviesByName(searchQuery);
   if (data.total_results === 0) {
-    notifyRef.classList.remove('visually-hidden');
+    notifyBRef.classList.add('visually-hidden');
+    notifyARef.classList.remove('visually-hidden');
   } else {
+    notifyARef.classList.add('visually-hidden');
+    notifyBRef.classList.add('visually-hidden');
     clearMarkup();
     const markup = createMarkup(data);
     containerGallery.insertAdjacentHTML('beforeend', markup);

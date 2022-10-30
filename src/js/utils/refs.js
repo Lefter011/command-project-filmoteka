@@ -23,7 +23,8 @@ const spinnerRef = document.querySelector('.js-spinner');
 // Header
 const headerRef = document.querySelector('#header');
 
-const notifyRef = document.querySelector('.notify');
+const notifyARef = document.querySelector('.alert-a');
+const notifyBRef = document.querySelector('.alert-b');
 
 // Library
 const headerButtonsContainerRef = document.querySelector('.header-buttons');
@@ -41,5 +42,6 @@ export {
   headerRef,
   headerButtonsContainerRef,
   headerButtonsRef,
-  notifyRef,
+  notifyARef,
+  notifyBRef,
 };
