@@ -1,5 +1,13 @@
+.mylibrari__main {
+    background-color: #E5E5E5;
+}
+
 .mylibrary {
     padding-top: 20px;
+
+    @include mq ('tablet') {
+            padding-top: 60px;
+        }
 }
 
 
