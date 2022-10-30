@@ -1,5 +1,7 @@
 import { containerGallery, searchFormRef, notifyRef } from './utils/refs';
+import { urls } from './utils/config';
 import ApiService from './ApiService';
+import { getGenres } from './utils/getGenres';
 
 const api = new ApiService();
 
@@ -27,27 +29,29 @@ async function onSubmit(event) {
 function createMarkup(data) {
   const { results } = data;
   return results
-    .map(({ poster_path, original_title, genre_ids, release_date }) => {
+    .map(({ poster_path, original_title, genre_ids, release_date, id }) => {
       const releaseYear = release_date.substring(0, 4);
-      const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
-      let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
+      const genresList = getGenres(genre_ids, 3);
+      let posterLink = `${urls.BASE_IMAGE_URL}${poster_path}`;
       if (poster_path === null) {
         posterLink = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
       }
-      return `<li class="hero__movie-item">
-<div class="gallery__section">
-    <ul class="gallery__card">
-        <li class="gallery-list list">
-            <div class="gallary__titular">
-                <img src="${posterLink}" width="395" alt="${original_title}" class="gallery__img">
-        </li>
-        </div>
-        <div class="gallary__info">
-            <p class="card__name">${original_title}</p>
-            <p class="card__info">${genre_ids} , ${releaseYear}</p>
-        </div>
-    </ul>
-</div>
+      return `<li class="card__item">
+  <div class="card__img-wrap">
+    <img
+      src="${posterLink}"
+      alt="${original_title}"
+      class="card__img"
+    />
+  </div>
+  <div class="card__text-wrap">
+    <h2 class="card__name">${original_title}</h2>
+    <div class="card__info">
+      <p class="visually-hidden">${id}</p>
+      <p class="card__genres">${genresList}</p>
+      <p class="card__year">${releaseYear}</p>
+    </div>
+  </div>
 </li>`;
     })
     .join('');
