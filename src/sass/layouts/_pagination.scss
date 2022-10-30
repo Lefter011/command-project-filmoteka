@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 1.33;
+
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pagination-buttons {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 197px;
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+.page-btn {
+
+    border-radius: 2px;
+    padding: 0 10px;
+    text-transform: uppercase;
+
+    margin: 0 7px;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 1.33;
+
+
+    color: #000000;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    justify-content: center;
+}
+
+.page-btn:first-of-type {
+    margin-left: 0;
+}
+
+.page-btn:last-of-type {
+    margin-right: 0;
+}
+
+.page-btn:not([class$="-page"]) {
+    width: 40px;
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.page-btn[class*="-page"] {
+    /* background: #ccc; */
+    font-size: 0.6em;
+    font-weight: 700;
+}
+
+.page-btn.active {
+    background: #FF6B08;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    color: #FFFFFF;
+}
+
+.page-btn[disabled] {
+    opacity: 0.3;
+}
+
+.page-btn.start-page {
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    border: none;
+
+    background-image: url(/src/img/pagination/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-right: 16px;
+
+}
+
+.page-btn.prev-page,
+.page-btn.next-page {
+    border-radius: 5px;
+    border: none;
+
+    background-image: url(/src/img/pagination/three_dots_icon_159804.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-right: 16px;
+}
+
+.page-btn.end-page {
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    border: none;
+
+    background-image: url(/src/img/pagination/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-right: 16px;
+}
