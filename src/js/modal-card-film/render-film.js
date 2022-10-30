@@ -20,17 +20,6 @@ function renderFilmCard(obj) {
     vote_count,
   } = obj;
 
-  console.log(
-    id,
-    title,
-    original_title,
-    overview,
-    poster_path,
-    genre_ids,
-    popularity,
-    vote_average,
-    vote_count
-  );
   markup = `<div class="modal__content">
   <div class="img-thumb">
     <picture class="main-modal-img">
