@@ -1,0 +1,244 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.2);
+  @include default-transition(opacity);
+
+  &.is-hidden {
+    opacity: 0;
+    @include default-transition(opacity);
+    pointer-events: none;
+  }
+
+  &.is-hidden .modal__film-card {
+    opacity: 0;
+    @include default-transition(opacity);
+  }
+}
+
+.modal__film-card {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  @include default-transition(opacity);
+  padding: 48px 20px 40px;
+  overflow-y: auto;
+  z-index: 15;
+  @include mq(tablet) {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    padding: 40px 36px;
+  }
+  @include mq(desktop) {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    padding: 40px 12px;
+  }
+
+  background-color: var(--modal-color);
+  width: 280px;
+  height: auto;
+
+  @include mq(tablet) {
+    width: 704px;
+  }
+  @include mq(desktop) {
+    width: 806px;
+  }
+}
+
+.modal__close-icon {
+  margin: 0 auto;
+  stroke: var(--dots-color);
+}
+
+.modal__title {
+  font-size: 20px;
+  @include mq(desktop) {
+    font-size: 30px;
+  }
+
+  line-height: 1.16;
+  color: var(--dots-color);
+}
+
+.modal__close-button {
+  @extend %flex-center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  border-radius: 50%;
+  background-color: inherit;
+  width: 30px;
+  height: 30px;
+  @include default-transition(box-shadow);
+}
+
+.modal__info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.modal__buttons {
+  display: flex;
+}
+
+.img-thumb {
+  width: 240px;
+  height: auto;
+  max-height: 100%;
+  @include mq(tablet) {
+    width: 264px;
+  }
+  @include mq(desktop) {
+    width: 375px;
+  }
+
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.modal__stats {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-size: 12px;
+}
+
+.stats__name {
+  padding-right: 40px;
+  @include mq(tablet) {
+    padding-right: 80px;
+  }
+  color: var(--table-color);
+}
+
+.modal__btn {
+  width: 110px;
+  height: 44px;
+  @include mq(tablet) {
+    width: 125px;
+  }
+  @include mq(desktop) {
+    width: 136px;
+  }
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  @include default-transition(box-shadow);
+  &--orange {
+    padding: 6px 27px;
+    @include mq(tablet) {
+      padding: 14px 10px 12px;
+    }
+
+    background-color: #ff6b01;
+    color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+
+  &--light {
+    padding: 12px 12px;
+    @include mq(tablet) {
+      padding: 14px 7px 12px;
+    }
+    @include mq(desktop) {
+      padding: 14px 8px 12px;
+    }
+    background-color: var(--white);
+    color: var(--dots-color);
+    border: 1px solid var(--dots-color);
+    border-radius: 5px;
+  }
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include mq(tablet) {
+    flex-direction: row;
+    gap: 68px;
+  }
+  @include mq(desktop) {
+    gap: 16px;
+  }
+}
+
+.main-modal-img {
+  object-fit: contain;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.list-info {
+  color: var(--dots-color);
+  margin-bottom: 8px;
+}
+
+.accent-num {
+  display: inline-block;
+  background-color: #ff6b01;
+  border-radius: 5px;
+  color: var(--white);
+  padding: 1px 9px;
+}
+
+.grey-num {
+  display: inline-block;
+  background-color: var(--secondary-background-color);
+  border-radius: 5px;
+  color: var(--dots-color);
+  padding: 1px 4px;
+}
+
+.about__title {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.about__text {
+  line-height: 1.67;
+  font-size: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.modal__btn:hover,
+.modal__btn:focus,
+.modal__close-button:hover,
+.modal__close-button:focus {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+body.modal-shown {
+  overflow: hidden;
+  & .backdrop {
+    position: fixed;
+    overflow-y: scroll;
+  }
+}
+
+.modal__film-card.is-open {
+  position: relative;
+  display: block;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
