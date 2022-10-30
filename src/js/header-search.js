@@ -1,4 +1,4 @@
-import { containerGallery, searchFormRef } from './utils/refs';
+import { containerGallery, searchFormRef, notifyRef } from './utils/refs';
 import ApiService from './ApiService';
 
 const api = new ApiService();
@@ -16,13 +16,12 @@ async function onSubmit(event) {
   }
   const data = await api.getMoviesByName(searchQuery);
   if (data.total_results === 0) {
-    alert(
-      'Search result is unsuccessful. Enter the correct movie name and try again!'
-    );
+    notifyRef.classList.remove('visually-hidden');
+  } else {
+    clearMarkup();
+    const markup = createMarkup(data);
+    containerGallery.insertAdjacentHTML('beforeend', markup);
   }
-  clearMarkup();
-  const markup = createMarkup(data);
-  containerGallery.insertAdjacentHTML('beforeend', markup);
 }
 
 function createMarkup(data) {
@@ -40,7 +39,7 @@ function createMarkup(data) {
     <ul class="gallery__card">
         <li class="gallery-list list">
             <div class="gallary__titular">
-                <img src="${posterLink}" alt="${original_title}" class="gallery__img">
+                <img src="${posterLink}" width="395" alt="${original_title}" class="gallery__img">
         </li>
         </div>
         <div class="gallary__info">
