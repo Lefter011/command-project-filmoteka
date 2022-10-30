@@ -28,11 +28,12 @@
   margin-bottom: 20px;
 
   @media screen and (min-width: 768px) {
-    margin-bottom: 32px;
+    margin-bottom: 0px;
     flex-basis: calc((100% - 64px) / 2);
   }
 
   @media screen and (min-width: 1280px) {
+    margin-bottom: 32px;
     flex-basis: calc((100% - 48px) / 3);
   }
 }
@@ -56,8 +57,9 @@
 }
 
 .card__text-wrap {
+  font-family: 'Roboto';
   font-weight: 500;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.16;
   margin-top: 10px;
 
@@ -66,23 +68,23 @@
   }
 
   @media screen and (min-width: 1280px) {
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1.2;
   }
 }
 
 .card__name {
   text-transform: uppercase;
-  color: var(--dots-color);
+  color: #000;
 }
 .card__info {
   display: flex;
   align-items: center;
-  color: var(--accent);
+  color: #ff6b08;
 }
 
 .card__genres {
   padding-right: 5px;
   margin-right: 5px;
-  border-right: 1px solid var(--accent);
+  border-right: 1px solid #ff6b08;
 }
