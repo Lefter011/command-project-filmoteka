@@ -24,22 +24,63 @@
   }
 }
 
-.hero__movie-item {
-  width: 280px;
-  height: 403px;
+.card__item {
   margin-bottom: 20px;
-  background: rgba(0, 0, 0, 0.178);
 
   @media screen and (min-width: 768px) {
-    width: 336px;
-    height: 457px;
-    margin-bottom: 0px;
+    margin-bottom: 32px;
     flex-basis: calc((100% - 64px) / 2);
   }
 
   @media screen and (min-width: 1280px) {
-    width: 394px;
-    height: 594px;
     flex-basis: calc((100% - 48px) / 3);
   }
+}
+
+.card__img {
+  width: 280px;
+  height: 398px;
+  border-radius: 5px;
+
+  @media screen and (min-width: 768px) {
+    height: 455px;
+    margin-bottom: 8px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 574px;
+    margin-bottom: 12px;
+  }
+}
+
+.card__text-wrap {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    line-height: 1.33;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.card__name {
+  text-transform: uppercase;
+  color: var(--dots-color);
+}
+.card__info {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+}
+
+.card__genres {
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: 1px solid var(--accent);
 }
