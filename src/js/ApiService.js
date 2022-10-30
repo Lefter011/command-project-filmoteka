@@ -1,4 +1,5 @@
 const axios = require('axios').default;
+
 import { urls, API_KEY } from '../utils/config';
 
 export default class ApiService {
