@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -44,6 +45,7 @@
   width: 280px;
   height: 398px;
   border-radius: 5px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   @media screen and (min-width: 768px) {
     width: 336px;
@@ -55,6 +57,13 @@
     width: 393px;
     height: 574px;
     margin-bottom: 12px;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5),
+      -23px 0 20px -23px rgba(0, 0, 0, 0.5),
+      23px 0 20px -23px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
   }
 }
 
@@ -83,6 +92,7 @@
   display: flex;
   align-items: center;
   color: #ff6b08;
+  margin-top: 5px;
 }
 
 .card__genres {
