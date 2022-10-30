@@ -23,3 +23,28 @@ async function onSubmit(event) {
   const markup = createMarkup(data);
   containerGallery.insertAdjacentHTML('beforeend', markup);
 }
+
+function createMarkup(data) {
+  const { results } = data;
+  return results
+    .map(({ poster_path, original_title, genre_ids, release_date }) => {
+      const releaseYear = release_date.substring(0, 4);
+      const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
+      return `<li class="hero__movie-item">
+<div class="gallery__section">
+    <ul class="gallery__card">
+        <li class="gallery-list list">
+            <div class="gallary__titular">
+                <img src="${BASE_PICTURE_URL}${poster_path}" width="280" alt="${original_title}" class="gallery__img">
+        </li>
+        </div>
+        <div class="gallary__info">
+            <p class="card__name">${original_title}</p>
+            <p class="card__info">${genre_ids} , ${releaseYear}</p>
+        </div>
+    </ul>
+</div>
+</li>`;
+    })
+    .join('');
+}
