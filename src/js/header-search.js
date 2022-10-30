@@ -40,7 +40,7 @@ function createMarkup(data) {
     <ul class="gallery__card">
         <li class="gallery-list list">
             <div class="gallary__titular">
-                <img src="${posterLink}" alt="${original_title}" class="gallery__img">
+                <img src="${posterLink}" width="395" alt="${original_title}" class="gallery__img">
         </li>
         </div>
         <div class="gallary__info">
