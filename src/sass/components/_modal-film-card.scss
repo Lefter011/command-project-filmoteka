@@ -45,7 +45,7 @@
     padding: 40px 12px;
   }
 
-  background-color: var(--modal-color);
+  background-color: var(--white);
   width: 280px;
   height: auto;
 
@@ -229,15 +229,18 @@
 }
 
 body.modal-shown {
-  overflow: hidden;
+  overflow-y: hidden;
+  width: calc(100vw - 5px);
+  @include mq(desktop) {
+    width: calc(100vw - 15px);
+  }
   & .backdrop {
-    position: fixed;
     overflow-y: scroll;
   }
 }
 
 .modal__film-card.is-open {
-  position: relative;
+  position: absolute;
   display: block;
   overflow-y: auto;
   overscroll-behavior-y: contain;
