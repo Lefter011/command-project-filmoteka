@@ -1,10 +1,32 @@
 .header {
-    width: 100%;
     height: 230px;
+    background-color: rgba(0, 0, 0, 0.56);
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    @media screen and (min-width: 321px) {
+    background-image: url(../img/header/background-img-mob.jpg);
+    @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: url(../img/header/background-img-mob@2x.jpg);
+        }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
         height: 216px;
+        background-image: url(../img/header/background-img-tabl.jpg);
+        @media (min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi),
+            (min-resolution: 2dppx) {
+                background-image: url(../img/header/background-img-tabl@2x.jpg);
+            }
     }
+    @media screen and (min-width: 1280px) {
+        background-image: url(../img/header/background-img-desk.jpg);
+    }
+    @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image: url(../img/header/background-img-desk@2x.jpg);
+        }
 }
 .gen {
     width: 320px;
@@ -22,46 +44,6 @@
     
     @media screen and (min-width: 1280px) {
         width: 1280px;
-    }
-}
-
-.header--index {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url(../img/header/background-img-mob.jpg);
-    background-position: center;
-    background-size: contain;
-
-    @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../img/header/background-img-mob@2x.jpg);
-        
-    }
-
-    @media screen and (min-width: 321px) and (max-width: 768px) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../img/header/background-img-tabl.jpg);
-
-        @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-                url(../img/header/background-img-tabl@2x.jpg);
-
-        }
-    }
-
-    @media screen and (min-width: 769px) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url(../img/header/background-img-desk.jpg);
-
-        @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-                url(../img/header/background-img-desk@2x.jpg);
-        }
     }
 }
 
@@ -136,7 +118,7 @@
 .active::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     width: 100%;
     height: 3px;
@@ -145,12 +127,18 @@
 
 .form-thumb {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .search-form {
     display: inline-block;
     position: relative;
+    margin-bottom: 16px;
+    @media screen and (min-width: 768px) {
+        margin-bottom: 20px;
+    }
 }
 
 .search-input {
@@ -206,4 +194,12 @@
     width: 12px;
     height: 12px;
     fill: #ffffff;
+}
+
+.notify {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FF001B;
 }
