@@ -104,8 +104,7 @@
     color: #FFFFFF;
     border-radius: 5px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: transparent;
-    border: 1px  solid #ffffff;
+    
 
     @include mq ('tablet') {
         margin-right: 32px;
@@ -128,8 +127,7 @@
     color: #FFFFFF;
     border-radius: 5px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #FF6B01;
-    border: none;
+    
 
     @include mq ('tablet') {
         width: 152px;
@@ -145,4 +143,14 @@
     -webkit-box-shadow: 20px 18px 41px 0px rgba(219, 103, 31, 1);
     -moz-box-shadow: 20px 18px 41px 0px rgba(219, 103, 31, 1);
     box-shadow: 20px 18px 41px 0px rgba(219, 103, 31, 1);
+}
+
+.active-btn {
+    background-color: #FF6B01;
+    border: none;
+}
+
+.inactive-btn {
+    background-color: transparent;
+    border: 1px solid #ffffff;
 }
