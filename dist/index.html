@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmoteka</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/index.b07a87f3.css">
+    <script src="/index.975ef6c8.js" defer=""></script>
+  </head>
+  <body>
+    <header class="header header--index">
+  <div class="gen">
+    <div class="page-head">
+      <a href="/index.html">
+        <svg class="logo__icon">
+          <use href="/header-icons.e159b4d2.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <a href="/index.html" class="logo__link">Filmoteka</a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="/index.html" class="nav__link active">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="/myLibrary.html" class="nav__link">My library</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="form-thumb">
+      <form class="search-form" id="search-form">
+        <input class="search-input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search">
+        <button type="submit" class="search-btn">
+          <svg class="search-icon">
+            <use href="/header-icons.e159b4d2.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</header>
+
+    <section class="container hero">
+  <h1 class="visually-hidden">Movie Trends</h1>
+  <div class="hero__movie-wrap">
+    <ul class="hero__movie-list list js-gallery"></ul>
+  </div>
+</section>
+
+    <div class="pagination-buttons"></div>
+
+
+    <button type="button" class="my-btn" data-modal-open="">Open modal</button>
+
+    <div class="backdrop is-hidden" data-modal="">
+  <div class="modal__film-card js-movie-card">
+    <button class="modal__close-button" data-modal-close="">
+      <svg class="modal__close-icon" width="30" height="30">
+        <use href="/sprite.2c1077b4.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="modal__container"></div>
+  </div>
+</div>
+
+
+    <footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-rights">
+      <div class="footer-rights__reserved">
+        <span class="footer-rights__copy">&copy</span>
+        <p class="footer-rights__text">
+          2020<span class="footer-rights__divider">|</span>
+        </p>
+        <p class="footer-rights__text">
+          All Rights Reserved<span class="footer-rights__divider">|</span>
+        </p>
+      </div>
+      <div class="footer-rights__students">
+        <p class="footer-rights__text">Developed with</p>
+        <svg class="heart-icon" width="14" height="13">
+          <use href="/icon.d44fde8b.svg#icon-heart"></use>
+        </svg>
+        <p class="footer-rights__text">
+          by
+          <a class="footer-rights__link" href="#" id="data-modal-open">
+            GoIT Students
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div class="backdrop visually-hidden" id="data-modal">
+  <div class="footer__modal">
+    <!-- <button type="button" class="footer__modal-btn" id="data-modal-close">
+      <svg class="footer__modal-icon" width="17" height="17">
+        <use href="./img/icon.svg#icon-close-black-18dp-2-1-1"></use>
+      </svg>
+    </button>  -->
+    <div class="footer__modal-wrap">
+      <div class="footer__modal-block">
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Михайло Чернецький</p>
+            <p class="footer__modal-role">Team lead</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Уляна Колеснікова</p>
+            <p class="footer__modal-role">Scrum master</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Сергій Павлюченко</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Вікторія Олійник</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Олена Абловацька</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__modal-block">
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Юлія Пархоменко</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Катерина Дзюбчук</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Вікторія Бондар</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Андрій Уткін</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+        <div class="footer__modal-teem">
+          <div class="footer__modal-author">
+            <svg class="footer__modal-circle" width="65" height="65">
+              <use href="/icon.d44fde8b.svg#icon-circle-svgrepo-com-1-1"></use>
+            </svg>
+          </div>
+          <div>
+            <p class="footer__modal-name">Ярослава Воробець</p>
+            <p class="footer__modal-role">developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
