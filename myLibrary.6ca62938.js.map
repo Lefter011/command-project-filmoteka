@@ -1,1 +1,0 @@
-{"mappings":"oeAAAA,EAAA,S","sources":["src/myLibrary.js"],"sourcesContent":["import './js/utils/handlebars-helpers';\nimport \"./js/utils/set-genres-to-localstorage\""],"names":["parcelRequire"],"version":3,"file":"myLibrary.6ca62938.js.map"}
