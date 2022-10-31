@@ -2,11 +2,13 @@ import { refs } from './modal-refs';
 import { onWatchedClick, WATCHED_KEY } from './add-to-watched';
 import { onQueueClick, LINE_KEY } from './add-to-queue';
 import { localStore } from '../utils/loc-storage';
+import {checkSavedFilms, checkWatchedFilms} from './check-saved-films';
 
 refs.openBtn.addEventListener('click', onOpenBtnClick);
 refs.closeBtn.addEventListener('click', onCloseBtnClick);
 
 function onOpenBtnClick(evt) {
+  evt.preventDefault();
   refs.backdrop.classList.remove('is-hidden');
   refs.modal.classList.add('is-open');
   refs.body.classList.add('modal-shown');
@@ -50,6 +52,6 @@ function saveKeysToStorage() {
   localStore.save(WATCHED_KEY, savedWatched);
 
   let savedLine = localStore.load(LINE_KEY);
-  LINE_KEY = LINE_KEY ? LINE_KEY : [];
+  savedLine = savedLine ? savedLine : [];
   localStore.save(LINE_KEY, savedLine);
 }

@@ -1,3 +1,5 @@
+import { localStore } from '../utils/loc-storage';
+
 export const films = [
   {
     adult: false,
@@ -360,3 +362,5 @@ export const films = [
     vote_count: 209,
   },
 ];
+
+localStore.save('queue', films);

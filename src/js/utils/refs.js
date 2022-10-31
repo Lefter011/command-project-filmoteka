@@ -23,21 +23,25 @@ const spinnerRef = document.querySelector('.js-spinner');
 // Header
 const headerRef = document.querySelector('#header');
 
+const notifyARef = document.querySelector('.alert-a');
+const notifyBRef = document.querySelector('.alert-b');
+
 // Library
 const headerButtonsContainerRef = document.querySelector('.header-buttons');
 
-const headerButtonsRef =
-    document.querySelectorAll('.header-button');
+const headerButtonsRef = document.querySelectorAll('.header-button');
 
 export {
-    buttonUpRef,
-    containerGallery,
-    containerPag,
-    searchFormRef,
-    movieCardModalRef,
-    accordionRef,
-    spinnerRef,
-    headerRef,
-    headerButtonsContainerRef,
-    headerButtonsRef,
+  buttonUpRef,
+  containerGallery,
+  containerPag,
+  searchFormRef,
+  movieCardModalRef,
+  accordionRef,
+  spinnerRef,
+  headerRef,
+  headerButtonsContainerRef,
+  headerButtonsRef,
+  notifyARef,
+  notifyBRef,
 };
