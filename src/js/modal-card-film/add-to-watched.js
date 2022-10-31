@@ -10,9 +10,18 @@ export function onWatchedClick(currentMovie) {
     const index = savedMovies.indexOf(isSaved);
     savedMovies.splice(index, 1);
     localStore.save(WATCHED_KEY, savedMovies);
+    switchBtnText(watchedBtn);
+    const btnHeight = watchedBtn.style.height;
+    queueBtn.style.height = btnHeight;
   } else {
     savedMovies.push(currentMovie);
     localStore.save(WATCHED_KEY, savedMovies);
+    switchBtnText(watchedBtn);
   }
 }
 
+export function switchBtnText(btn) {
+  btn.textContent = 'Add to watched' ? 'Remove from watched' : 'Add to watched';
+  btn.textContent = 'Add to queue' ? 'Remove from queue' : 'Add to queue';
+  btn.style.height = 'auto';
+}

@@ -1,5 +1,6 @@
 import { refs } from './modal-refs';
 import { films } from './random-films';
+import { getGenres } from '../utils/getGenres';
 const Handlebars = require('handlebars');
 
 const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/';
@@ -7,7 +8,7 @@ const desktopSize = 'original';
 const mobileSize = 'w342';
 const tabletSize = 'w780';
 
-
+const genresNames = getGenres(films[9].genre_ids, 3);
 const markup = Handlebars.compile(`<div class="modal__content">
   <div class="img-thumb">
   {{#if poster_path}}
@@ -39,7 +40,7 @@ const markup = Handlebars.compile(`<div class="modal__content">
     </picture>
     {{else}}
       <img
-      src='https://cdn.pixabay.com/photo/2014/03/25/16/27/movie-297135_960_720.png'
+      src='https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg'
           alt="{{title}}"
           class="main-modal-img"
         />
@@ -51,7 +52,9 @@ const markup = Handlebars.compile(`<div class="modal__content">
       <tr class="stats__row">
         <td class="stats__name">Vote</td>
         <td class="stats__value">
+        {{#if vote_average}}
           <span class="accent-num">{{vote_average}}</span> /
+        {{/if}}
           <span class="grey-num">{{vote_count}}</span>
         </td>
       </tr>
@@ -71,7 +74,7 @@ const markup = Handlebars.compile(`<div class="modal__content">
       <tr class="stats__row">
       {{#if genre_ids}}
         <td class="stats__name">Genre</td>
-        <td class="stats__value">{{genre_ids}}</td>
+        <td class="stats__value">${genresNames}</td>
       {{/if}}
       </tr>
     </table>
@@ -99,8 +102,9 @@ const markup = Handlebars.compile(`<div class="modal__content">
   </div>
 </div>`);
 
+const cardMarkup = markup(films[9]);
 function addMarkupToCard(markup) {
   refs.containerForInfo.innerHTML = markup;
 }
 
-addMarkupToCard(markup(films[9]));
+addMarkupToCard(cardMarkup);

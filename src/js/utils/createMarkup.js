@@ -2,8 +2,8 @@ import { urls } from '../utils/config';
 
 export function createMarkup(movies) {
   return movies
-    .map(({ genre_ids, title, poster_path, release_date }) => {
-      return `<li class="card__item">
+    .map(({ genre_ids, title, poster_path, release_date, id }) => {
+      return `<li class="card__item" data-id=${id}>
   <div class="card__img-wrap">
     <img
       src="${urls.BASE_IMAGE_URL}${poster_path}"
