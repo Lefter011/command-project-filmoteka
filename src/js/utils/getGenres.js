@@ -13,5 +13,5 @@ export function getGenres(genre_ids, maxAmount) {
   if (genre_ids.length > maxAmount) {
     genresArr.splice(maxAmount - 1, 1, 'Other');
   }
-  return genresArr.join(' ');
+  return genresArr.join(', ');
 }
