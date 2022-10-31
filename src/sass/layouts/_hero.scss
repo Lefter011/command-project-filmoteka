@@ -93,6 +93,11 @@
   align-items: center;
   color: #ff6b08;
   margin-top: 5px;
+  font-size: 12px;
+  @media screen and (min-width: 1280px) {
+    font-size: 15px;
+    line-height: 1.2;
+  }
 }
 
 .card__genres {
