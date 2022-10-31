@@ -4,7 +4,7 @@ export function getGenres(genre_ids, maxAmount) {
   const allGenres = JSON.parse(json).genres;
   let genresArr = [];
   for (let i = 0; i < maxAmount && i < genre_ids.length; i += 1) {
-    for (genre of allGenres) {
+    for (const genre of allGenres) {
       if (genre_ids[i] === genre.id) {
         genresArr.push(genre.name);
       }
