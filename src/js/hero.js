@@ -1,7 +1,6 @@
 import ApiService from './ApiService';
 import { containerGallery } from './utils/refs';
 import { createMarkup } from './utils/createMarkup';
-// import { urls } from './utils/config';
 
 const apiMovie = new ApiService();
 

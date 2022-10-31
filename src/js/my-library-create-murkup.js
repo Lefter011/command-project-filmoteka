@@ -69,7 +69,7 @@ function createMarkupWatched() {
         const releaseYear = release_date.substring(0, 4);
         const vote = Number(vote_average).toFixed(1);
         const genres = getGenresName(genre_ids);
-        const slicedGenres = sliseGenres(genres)
+        const slicedGenres = sliseGenres(genres);
       const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
       let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
       if (poster_path === null) {
