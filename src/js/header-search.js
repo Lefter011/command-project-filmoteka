@@ -41,7 +41,7 @@ function createMarkup(data) {
   return results
     .map(({ poster_path, original_title, genre_ids, release_date, id }) => {
       const releaseYear = release_date.substring(0, 4);
-      const genresList = getGenres(genre_ids, 3);
+      let genresList = getGenres(genre_ids, 3);
       let posterLink = `${urls.BASE_IMAGE_URL}${poster_path}`;
       if (poster_path === null) {
         posterLink = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
