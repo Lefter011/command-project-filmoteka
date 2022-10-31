@@ -1,4 +1,5 @@
 import { localStore } from '../utils/loc-storage';
+import { films } from './random-films';
 
 export const WATCHED_KEY = `watched`;
 
