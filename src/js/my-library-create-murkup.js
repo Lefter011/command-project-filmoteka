@@ -65,7 +65,7 @@ function createMarkupWatched() {
         return
     }
   return watchedMovies
-    .map(({ poster_path, original_title, genre_ids, release_date, vote_average }) => {
+    .map(({ poster_path, original_title, genre_ids, release_date, vote_average, id }) => {
         const releaseYear = release_date.substring(0, 4);
         const vote = Number(vote_average).toFixed(1);
         const genres = getGenresName(genre_ids);
@@ -75,7 +75,7 @@ function createMarkupWatched() {
       if (poster_path === null) {
         posterLink = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
       }
-      return`<li class="mylibrary__item">
+      return`<li class="mylibrary__item" data-id=${id}>
             <div class="mylibrary__item-wrapper">
                 <img
                 class="mylibrary__item-img"
