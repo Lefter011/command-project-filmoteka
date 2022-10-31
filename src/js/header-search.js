@@ -46,15 +46,15 @@ function createMarkup(data) {
       if (poster_path === null) {
         posterLink = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
       }
-      return `<li class="card__item">
-  <div class="card__img-wrap">
+      return `<li class="card__item" data-id=${id}>
+  <div class="card__img-wrap js-modal-trigger">
     <img
       src="${posterLink}"
       alt="${original_title}"
       class="card__img"
     />
   </div>
-  <div class="card__text-wrap">
+  <div class="card__text-wrap js-modal-trigger">
     <h2 class="card__name">${original_title}</h2>
     <div class="card__info">
       <p class="visually-hidden">${id}</p>

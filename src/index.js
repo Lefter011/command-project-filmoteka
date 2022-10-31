@@ -10,7 +10,6 @@ import './js/utils/set-genres-to-localstorage';
 
 import './js/utils/loc-storage';
 
-import './js/modal-card-film/modal';
 import './js/modal-card-film/modal-refs';
 import './js/modal-card-film/render-film';
 import './js/modal-card-film/modal-open-close';
