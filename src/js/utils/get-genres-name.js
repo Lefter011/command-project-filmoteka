@@ -5,7 +5,3 @@ export function getGenresName(movieID) {
         return findGenre ? [...acc, findGenre.name] : acc;
     }, []);
 }
-
-
-
-

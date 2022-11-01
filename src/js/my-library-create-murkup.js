@@ -2,8 +2,7 @@ import axios from 'axios';
 import { parse } from 'handlebars';
 import { API_KEY } from './utils/config';
 import { urls } from './utils/config';
-import { getGenresName } from './utils/getGenresName';
-import { sliceGenres } from "./utils/slice-genres";
+import { getGenresName } from './utils/get-Genres-Name';
 
 const queueBTN = document.querySelector('.queue-btn');
 const watchedBTN = document.querySelector('.watched-btn');
