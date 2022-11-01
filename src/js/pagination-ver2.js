@@ -20,7 +20,7 @@ async function main() {
 
         const start = cardQuantity * page;
         const end = start + cardQuantity;
-        const paginatedData = arrData.slice(start,end)
+        const paginatedData = arrData.results.slice(start,end)
 
         paginatedData.forEach(({title}) => {
             const movieEl = document.createElement('div');
