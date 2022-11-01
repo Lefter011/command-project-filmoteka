@@ -111,8 +111,6 @@ export function createModalCardMarkup(film) {
     </div>
   </div>
 </div>`;
-
-<<<<<<< modal-connected-to-card
   return markup;
 }
 
