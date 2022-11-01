@@ -1,8 +1,8 @@
 import { refs } from './modal-refs';
 import { films } from './random-films';
 const Handlebars = require('handlebars');
-import { getGenresName } from '../utils/get-genres-name';
-import { sliсeGenres } from '../my-library-create-murkup';
+import { getGenresName } from './utils/get-genres-name';
+import { sliсeGenres } from './my-library-create-murkup';
 
 const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/';
 const desktopSize = 'original';

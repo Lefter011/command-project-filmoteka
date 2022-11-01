@@ -1,4 +1,4 @@
-import { urls } from './config';
+import { urls } from '../utils/config';
 import { getGenresName } from './get-genres-name';
 import { sliceGenres } from './slice-genres';
 
