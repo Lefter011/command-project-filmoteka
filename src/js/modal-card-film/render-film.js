@@ -103,14 +103,14 @@ export function createModalCardMarkup(film) {
     <div class="modal__buttons">
       <button
         type="button"
-        class="modal__btn modal__btn--orange"
+        class="modal__btn"
         data-modal-watched
       >
         add to watched
       </button>
       <button
         type="button"
-        class="modal__btn modal__btn--light"
+        class="modal__btn"
         data-modal-queue
       >
         add to queue
