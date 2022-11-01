@@ -2,39 +2,58 @@ import { refs } from './modal-refs';
 import { films } from './random-films';
 import { getGenres } from '../utils/getGenres';
 const Handlebars = require('handlebars');
+import { getGenresName } from '../utils/getGenresName';
+import { sliseGenres } from '../my-library-create-murkup';
 
 const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/';
 const desktopSize = 'original';
 const mobileSize = 'w342';
 const tabletSize = 'w780';
 
-const genresNames = getGenres(films[9].genre_ids, 3);
-const markup = Handlebars.compile(`<div class="modal__content">
+export function createModalCardMarkup(film) {
+  const {
+    poster_path,
+    title,
+    vote_average,
+    vote_count,
+    popularity,
+    overview,
+    original_title,
+    genres,
+  } = film;
+
+  const genresIds = genres.map(genre => genre.id);
+  const cutGenres = sliseGenres(genresIds);
+  const genresNames = getGenresName(cutGenres).join(', ');
+  const poster = poster_path
+    ? '${BASE_PICTURE_URL}${mobileSize}${poster_path}'
+    : 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
+
+  const markup = `<div class="modal__content">
   <div class="img-thumb">
-  {{#if poster_path}}
     <picture class="main-modal-img">
       <source
-        srcset="${BASE_PICTURE_URL}${desktopSize}{{poster_path}}"
+        srcset="${BASE_PICTURE_URL}${desktopSize}${poster_path}"
         media="(min-width: 1024px)"
       />
       <source
         srcset="
-          ${BASE_PICTURE_URL}${tabletSize}{{poster_path}}  1x,
-          ${BASE_PICTURE_URL}${desktopSize}{{poster_path}} 2x
+          ${BASE_PICTURE_URL}${tabletSize}${poster_path}  1x,
+          ${BASE_PICTURE_URL}${desktopSize}${poster_path} 2x
         "
         media="(min-width: 768px)"
       />
       <source
         srcset="
-          ${BASE_PICTURE_URL}${mobileSize}{{poster_path}} 1x,
-          ${BASE_PICTURE_URL}${tabletSize}{{poster_path}} 2x
+          ${BASE_PICTURE_URL}${mobileSize}${poster_path} 1x,
+          ${BASE_PICTURE_URL}${tabletSize}${poster_path} 2x
         "
         media="(min-width: 320px)"
       />
 
       <img
-        src="${BASE_PICTURE_URL}${mobileSize}{{poster_path}}"
-        alt="{{title}}"
+        src='${poster}',
+        alt="${title}"
         class="main-modal-img"
       />
     </picture>
@@ -47,41 +66,32 @@ const markup = Handlebars.compile(`<div class="modal__content">
     {{/if}}
   </div>
   <div class="modal__info-container">
-    <h2 class="modal__title">{{title}}</h2>
+    <h2 class="modal__title">${title}</h2>
     <table class="modal__stats">
       <tr class="stats__row">
         <td class="stats__name">Vote</td>
         <td class="stats__value">
-        {{#if vote_average}}
-          <span class="accent-num">{{vote_average}}</span> /
-        {{/if}}
-          <span class="grey-num">{{vote_count}}</span>
+          <span class="accent-num">${vote_average}</span> /
+          <span class="grey-num">${vote_count}</span>
         </td>
       </tr>
       <tr class="stats__row">
         <td class="stats__name">Popularity</td>
-        <td class="stats__value">{{popularity}}</td>
+        <td class="stats__value">${popularity}</td>
       </tr>
       <tr class="stats__row">
-      {{#if original_title}}
         <td class="stats__name">Original Title</td>
-        <td class="stats__value">{{original_title}}</td>
-        {{else}}
-        <td class="stats__name">Title</td>
-        <td class="stats__value">{{title}}</td>
-        {{/if}}
+        <td class="stats__value">${original_title}</td>
       </tr>
       <tr class="stats__row">
-      {{#if genre_ids}}
         <td class="stats__name">Genre</td>
         <td class="stats__value">${genresNames}</td>
-      {{/if}}
       </tr>
     </table>
 
     <section class="modal__about">
       <h3 class="about__title">About</h3>
-      <p class="about__text">{{overview}}</p>
+      <p class="about__text">${overview}</p>
     </section>
     <div class="modal__buttons">
       <button
@@ -100,11 +110,12 @@ const markup = Handlebars.compile(`<div class="modal__content">
       </button>
     </div>
   </div>
-</div>`);
+</div>`;
 
-const cardMarkup = markup(films[9]);
-function addMarkupToCard(markup) {
-  refs.containerForInfo.innerHTML = markup;
+<<<<<<< modal-connected-to-card
+  return markup;
 }
 
-addMarkupToCard(cardMarkup);
+export function addMarkupToCard(markup) {
+  refs.containerForInfo.innerHTML = markup;
+}
