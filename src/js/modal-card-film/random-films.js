@@ -363,4 +363,4 @@ export const films = [
   },
 ];
 
-localStore.save('queue', films);
+// localStore.save('queue', films);
