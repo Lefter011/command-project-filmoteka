@@ -20,41 +20,58 @@ export function createModalCardMarkup(film) {
     original_title,
     genres,
   } = film;
-
   const genresIds = genres.map(genre => genre.id);
-  const cutGenres = sliceGenres(genresIds);
-  const genresNames = getGenresName(cutGenres).join(', ');
-  const poster = poster_path
-    ? '${BASE_PICTURE_URL}${mobileSize}${poster_path}'
-    : 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
+  let genresNames = null;
+  console.log('createModalCardMarkup   genresIds', genresIds);
+  if (genresIds.length > 0) {
+    const cutGenres = sliceGenres(genresIds);
+    genresNames = getGenresName(cutGenres).join(', ');
+  } else {
+    genresNames = 'Sorry, genres are not defined';
+  }
+
+  const poster = {
+    mobile: '',
+    tablet: '',
+    desktop: '',
+  };
+  if (poster_path) {
+    poster.desktop = `${BASE_PICTURE_URL}${desktopSize}${poster_path}`;
+    poster.tablet = `${BASE_PICTURE_URL}${tabletSize}${poster_path}`;
+    poster.mobile = `${BASE_PICTURE_URL}${mobileSize}${poster_path}`;
+  } else {
+    poster.desktop = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
+    poster.tablet = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
+    poster.mobile = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
+  }
 
   const markup = `<div class="modal__content">
   <div class="img-thumb">
-    <picture class="main-modal-img">
-      <source
-        srcset="${BASE_PICTURE_URL}${desktopSize}${poster_path}"
-        media="(min-width: 1024px)"
-      />
-      <source
-        srcset="
-          ${BASE_PICTURE_URL}${tabletSize}${poster_path}  1x,
-          ${BASE_PICTURE_URL}${desktopSize}${poster_path} 2x
-        "
-        media="(min-width: 768px)"
-      />
-      <source
-        srcset="
-          ${BASE_PICTURE_URL}${mobileSize}${poster_path} 1x,
-          ${BASE_PICTURE_URL}${tabletSize}${poster_path} 2x
-        "
-        media="(min-width: 320px)"
-      />
-      <img
-        src='${poster}',
-        alt="${title}"
-        class="main-modal-img"
-      />
-    </picture>
+  <picture class="main-modal-img">
+  <source
+    srcset="${poster.desktop}"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="
+    ${poster.tablet}  1x,
+      ${poster.desktop} 2x
+    "
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="
+      ${poster.mobile} 1x,
+      ${poster.tablet} 2x
+    "
+    media="(min-width: 320px)"
+  />
+  <img
+    src='${poster.mobile}',
+    alt="${title}"
+    class="main-modal-img"
+  />
+</picture>
   </div>
   <div class="modal__info-container">
     <h2 class="modal__title">${title}</h2>
