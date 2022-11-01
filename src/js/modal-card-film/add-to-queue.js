@@ -1,21 +1,23 @@
 import { localStore } from '../utils/loc-storage';
-import { switchBtnText } from './add-to-watched';
+import { checkSavedFilms } from './check-saved-films';
 
 export const LINE_KEY = `queue`;
 
-export function onQueueClick(currentMovie) {
+export function onQueueClick(evt, arg) {
+  evt.preventDefault();
+  const queueBtn = document.querySelector('button[data-modal-queue]');
   const savedMovies = localStore.load(LINE_KEY);
-  const isSaved = savedMovies.find(film => film.id === currentMovie.id);
+  const isSaved = checkSavedFilms(arg);
   if (isSaved) {
     const index = savedMovies.indexOf(isSaved);
     savedMovies.splice(index, 1);
     localStore.save(LINE_KEY, savedMovies);
-    switchBtnText(queueBtn);
-    const btnHeight = queueBtn.style.height;
-    watchedBtn.style.height = btnHeight;
+    queueBtn.textContent = 'Add to queue';
   } else {
-    savedMovies.push(currentMovie);
+    savedMovies.push(arg);
     localStore.save(LINE_KEY, savedMovies);
-    switchBtnText(queueBtn);
+    queueBtn.textContent = 'Remove from queue';
+    queueBtn.style.width = 'fit-content';
+    queueBtn.style.height = 'auto';
   }
 }
