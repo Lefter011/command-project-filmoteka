@@ -57,8 +57,6 @@ async function main() {
             currentItemBtn.classList.remove('pagination-current');
 
             btnEl.classList.add('pagination-current')
-           
-
         }
         )
         return btnEl;
