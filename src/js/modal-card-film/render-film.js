@@ -1,5 +1,6 @@
 import { refs } from './modal-refs';
 import { films } from './random-films';
+import { getGenres } from '../utils/getGenres';
 const Handlebars = require('handlebars');
 import { getGenresName } from '../utils/getGenresName';
 import { sliseGenres } from '../my-library-create-murkup';
@@ -56,6 +57,13 @@ export function createModalCardMarkup(film) {
         class="main-modal-img"
       />
     </picture>
+    {{else}}
+      <img
+      src='https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg'
+          alt="{{title}}"
+          class="main-modal-img"
+        />
+    {{/if}}
   </div>
   <div class="modal__info-container">
     <h2 class="modal__title">${title}</h2>
@@ -104,6 +112,7 @@ export function createModalCardMarkup(film) {
   </div>
 </div>`;
 
+<<<<<<< modal-connected-to-card
   return markup;
 }
 

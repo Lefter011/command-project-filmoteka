@@ -3,6 +3,7 @@ import { parse } from 'handlebars';
 import { API_KEY } from './utils/config';
 import { urls } from './utils/config';
 import { getGenresName } from './utils/getGenresName';
+import { sliceGenres } from "./utils/slice-genres";
 
 const queueBTN = document.querySelector('.queue-btn');
 const watchedBTN = document.querySelector('.watched-btn');
