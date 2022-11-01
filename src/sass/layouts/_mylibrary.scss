@@ -4,9 +4,11 @@
 
 .mylibrary {
     padding-top: 20px;
+    padding-bottom: 20px;
 
     @include mq ('tablet') {
             padding-top: 60px;
+            padding-bottom: 60px;
         }
 }
 
@@ -19,11 +21,14 @@
     @include mq ('tablet') {
         gap: 32px;
     }
+
+    @include mq ('desktop') {
+        gap: 16px;
+    }
 }
 
 .mylibrary__item {
     width: 100%;
-    padding: 5px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     @include mq ('tablet'){
@@ -32,19 +37,30 @@
 
         @include mq ('desktop') {
             width: calc((100% - 64px)/3);
+            padding-bottom: 16px;
         }
 }
 
-.mylibrary__item:hover, .mylibrary__item:focus {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
-        -23px 0 20px -23px rgba(0, 0, 0, 0.8),
-        23px 0 20px -23px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(0, 0, 0, 0.1);;
-}
 
 .mylibrary__item-img {
     border-radius: 5px;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    
+
+    &:hover, &:focus{
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5),
+                    -23px 0 20px -23px rgba(0, 0, 0, 0.5),
+                    23px 0 20px -23px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.1);
+                    transform: scale(1.02);
+    }
+
 }
+
+
+
+
+
 
 .mylibrary__item-text-wrapper{
     display: flex;
