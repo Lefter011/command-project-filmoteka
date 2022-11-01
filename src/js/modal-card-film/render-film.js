@@ -2,7 +2,7 @@ import { refs } from './modal-refs';
 import { films } from './random-films';
 const Handlebars = require('handlebars');
 import { getGenresName } from '../utils/get-genres-name';
-import { sliseGenres } from '../my-library-create-murkup';
+import { sliceGenres } from '../utils/slice-genres';
 
 const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/';
 const desktopSize = 'original';
@@ -22,7 +22,7 @@ export function createModalCardMarkup(film) {
   } = film;
 
   const genresIds = genres.map(genre => genre.id);
-  const cutGenres = sliseGenres(genresIds);
+  const cutGenres = sliceGenres(genresIds);
   const genresNames = getGenresName(cutGenres).join(', ');
   const poster = poster_path
     ? '${BASE_PICTURE_URL}${mobileSize}${poster_path}'

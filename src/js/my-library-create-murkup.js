@@ -1,8 +1,5 @@
-import axios from 'axios';
-import { parse } from 'handlebars';
-import { API_KEY } from './utils/config';
-import { urls } from './utils/config';
-import { getGenresName } from './utils/get-genres-name';
+import { getGenresName } from "./utils/get-genres-name";
+import { sliceGenres } from "./utils/slice-genres";
 
 const queueBTN = document.querySelector('.queue-btn');
 const watchedBTN = document.querySelector('.watched-btn');
@@ -70,7 +67,7 @@ function createMarkupWatched() {
         const releaseYear = release_date.substring(0, 4);
         const vote = Number(vote_average).toFixed(1);
         const genres = getGenresName(genre_ids);
-        const slicedGenres = sliseGenres(genres);
+        const slicedGenres = sliceGenres(genres);
         const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
         let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
         if (poster_path === null) {
@@ -122,7 +119,7 @@ function createMarkupQueue() {
         const releaseYear = release_date.substring(0, 4);
         const vote = Number(vote_average).toFixed(1);
         const genres = getGenresName(genre_ids);
-        const slicedGenres = sliseGenres(genres);
+        const slicedGenres = sliceGenres(genres);
         const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
         let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
         if (poster_path === null) {
