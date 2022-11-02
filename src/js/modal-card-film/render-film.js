@@ -19,15 +19,17 @@ export function createModalCardMarkup(film) {
     original_title,
     genres,
   } = film;
+
+  let description = overview ? overview : 'N/A';
+  const votes = vote_average.toFixed(1);
   const genresIds = genres.map(genre => genre.id);
   let genresNames = null;
   if (genresIds.length > 0) {
-    const cutGenres = sliceGenres(genresIds);
-    genresNames = getGenresName(cutGenres).join(', ');
+    genresNames = getGenresName(genresIds).join(', ');
   } else {
-    genresNames = 'Sorry, genres are not defined';
+    genresNames = 'N/A';
   }
-  
+
   const poster = {
     mobile: '',
     tablet: '',
@@ -77,7 +79,7 @@ export function createModalCardMarkup(film) {
       <tr class="stats__row">
         <td class="stats__name">Vote</td>
         <td class="stats__value">
-          <span class="accent-num">${vote_average}</span> /
+          <span class="accent-num">${votes}</span> /
           <span class="grey-num">${vote_count}</span>
         </td>
       </tr>
@@ -96,7 +98,7 @@ export function createModalCardMarkup(film) {
     </table>
     <section class="modal__about">
       <h3 class="about__title">About</h3>
-      <p class="about__text">${overview}</p>
+      <p class="about__text">${description}</p>
     </section>
     <div class="modal__buttons">
       <button

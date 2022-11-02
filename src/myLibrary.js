@@ -8,4 +8,4 @@ import './js/footer_modal';
 import './js/my-library-create-murkup';
 
 import './js/modal-card-film/modal-library';
-import './js/pagination-test/pagination-test';
+import './js/pagination-test/pagination-library';
