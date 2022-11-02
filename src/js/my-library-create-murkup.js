@@ -48,29 +48,32 @@ function clearPage() {
 
 function createMarkupWatched() {
   const watchedMovies = JSON.parse(localStorage.getItem('watched'));
-  if (watchedMovies) {
-    myLibraryList.classList.remove('visually-hidden');
-    messageWithoutMovies.classList.add('visually-hidden');
-  }
-  if (!watchedMovies) {
+    if (watchedMovies.length === 0) {
     myLibraryList.classList.add('visually-hidden');
     messageWithoutMovies.classList.remove('visually-hidden');
+    myLibrary.style.height = '100vh';
     return;
+  }
+  if (watchedMovies.length > 0) {
+    myLibraryList.classList.remove('visually-hidden');
+    messageWithoutMovies.classList.add('visually-hidden');
   }
   return watchedMovies
     .map(
       ({
         poster_path,
         original_title,
-        genre_ids,
+        genres,
         release_date,
         vote_average,
         id,
       }) => {
         const releaseYear = release_date.substring(0, 4);
         const vote = Number(vote_average).toFixed(1);
-        const genres = getGenresName(genre_ids);
-        const slicedGenres = sliceGenres(genres);
+        // const genres = getGenresName(genre_ids);
+        const genresArr = [];
+        genres.map(genre => genresArr.push(genre.name))
+        const slicedGenres = sliceGenres(genresArr);
         const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
         let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
         if (poster_path === null) {
@@ -102,29 +105,33 @@ function createMarkupWatched() {
 
 function createMarkupQueue() {
   const queueMovies = JSON.parse(localStorage.getItem('queue'));
-  if (queueMovies) {
+  if (queueMovies.length === 0) {
+    myLibraryList.classList.add('visually-hidden');
+    messageWithoutMovies.classList.remove('visually-hidden');
+    myLibrary.style.height = '100vh';
+    return;
+  }
+  if (queueMovies.length > 0) {
     myLibraryList.classList.remove('visually-hidden');
     messageWithoutMovies.classList.add('visually-hidden');
   }
-  if (!queueMovies) {
-    myLibraryList.classList.add('visually-hidden');
-    messageWithoutMovies.classList.remove('visually-hidden');
-    return;
-  }
+  
   return queueMovies
     .map(
       ({
         poster_path,
         original_title,
-        genre_ids,
+        genres,
         release_date,
         vote_average,
         id,
       }) => {
         const releaseYear = release_date.substring(0, 4);
         const vote = Number(vote_average).toFixed(1);
-        const genres = getGenresName(genre_ids);
-        const slicedGenres = sliceGenres(genres);
+        // const genres = getGenresName(genre_ids);
+        const genresArr = [];
+        genres.map(genre => genresArr.push(genre.name))
+        const slicedGenres = sliceGenres(genresArr);
         const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
         let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
         if (poster_path === null) {
