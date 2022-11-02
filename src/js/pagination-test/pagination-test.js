@@ -26,6 +26,7 @@ let currentPage = 1;
 
 let btns = document.querySelectorAll('.pagination-button');
 
+
 prevDotsRef.hidden = true;
 leftArrowRef.hidden = true;
 firstPageRef.hidden = true;
