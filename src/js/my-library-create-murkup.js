@@ -5,6 +5,7 @@ const queueBTN = document.querySelector('.queue-btn');
 const watchedBTN = document.querySelector('.watched-btn');
 const myLibraryList = document.querySelector('.mylibrary__list');
 const myLibrary = document.querySelector('.mylibrary');
+const messageWithoutMovies = document.querySelector(".no-list")
 
 function onLoadPage() {
   clearPage();
@@ -47,11 +48,13 @@ function clearPage() {
 
 function createMarkupWatched() {
   const watchedMovies = JSON.parse(localStorage.getItem('watched'));
+  if (watchedMovies) {
+    myLibraryList.classList.remove('visually-hidden');
+    messageWithoutMovies.classList.add('visually-hidden');
+  }
   if (!watchedMovies) {
-    myLibrary.style.height = '100vh';
-    myLibraryList.textContent = '';
-    myLibraryList.textContent =
-      "Sorry you don't have any movies added. Create a new list now";
+    myLibraryList.classList.add('visually-hidden');
+    messageWithoutMovies.classList.remove('visually-hidden');
     return;
   }
   return watchedMovies
@@ -99,11 +102,13 @@ function createMarkupWatched() {
 
 function createMarkupQueue() {
   const queueMovies = JSON.parse(localStorage.getItem('queue'));
-  if (!queueMovies) {
-    myLibrary.style.height = '100vh';
-    myLibraryList.textContent = '';
-    myLibraryList.textContent =
-      "Sorry you don't have any movies added. Create a new list now";
+  if (watchedMovies) {
+    myLibraryList.classList.remove('visually-hidden');
+    messageWithoutMovies.classList.add('visually-hidden');
+  }
+  if (!watchedMovies) {
+    myLibraryList.classList.add('visually-hidden');
+    messageWithoutMovies.classList.remove('visually-hidden');
     return;
   }
   return queueMovies
