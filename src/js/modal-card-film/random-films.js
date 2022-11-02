@@ -367,3 +367,6 @@ export const films = [
 
 <<<<<<< Updated upstream
 localStore.save('queue', films);
+=======
+createMarkup(films);
+>>>>>>> Stashed changes
