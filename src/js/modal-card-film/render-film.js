@@ -22,28 +22,16 @@ export function createModalCardMarkup(film) {
   } = film;
   const genresIds = genres.map(genre => genre.id);
   let genresNames = null;
-  console.log('createModalCardMarkup   genresIds', genresIds);
   if (genresIds.length > 0) {
     const cutGenres = sliceGenres(genresIds);
     genresNames = getGenresName(cutGenres).join(', ');
   } else {
     genresNames = 'Sorry, genres are not defined';
   }
-
-  const poster = {
-    mobile: '',
-    tablet: '',
-    desktop: '',
-  };
-  if (poster_path) {
-    poster.desktop = `${BASE_PICTURE_URL}${desktopSize}${poster_path}`;
-    poster.tablet = `${BASE_PICTURE_URL}${tabletSize}${poster_path}`;
-    poster.mobile = `${BASE_PICTURE_URL}${mobileSize}${poster_path}`;
-  } else {
-    poster.desktop = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
-    poster.tablet = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
-    poster.mobile = 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
-  }
+  
+  const poster = poster_path
+    ? '${BASE_PICTURE_URL}${mobileSize}${poster_path}'
+    : 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
 
   const markup = `<div class="modal__content">
   <div class="img-thumb">

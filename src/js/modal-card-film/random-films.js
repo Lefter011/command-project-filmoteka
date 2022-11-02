@@ -1,4 +1,6 @@
 import { localStore } from '../utils/loc-storage';
+import { createMarkup } from '../utils/createMarkup';
+
 
 export const films = [
   {
@@ -362,5 +364,3 @@ export const films = [
     vote_count: 209,
   },
 ];
-
-// localStore.save('queue', films);

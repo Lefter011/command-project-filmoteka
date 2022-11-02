@@ -14,7 +14,7 @@ const api = new ApiService();
 
 searchFormRef.addEventListener('submit', onSubmit);
 
-async function onSubmit(event) {
+export async function onSubmit(event, page) {
   event.preventDefault();
   const searchQuery = event.currentTarget.elements.searchQuery.value
     .trim()
@@ -24,7 +24,8 @@ async function onSubmit(event) {
     notifyBRef.classList.remove('visually-hidden');
     return;
   }
-  const data = await api.getMoviesByName(searchQuery);
+  api.query = searchQuery;
+  const data = await api.getMoviesByName(searchQuery, page);
   if (data.total_results === 0) {
     notifyBRef.classList.add('visually-hidden');
     notifyARef.classList.remove('visually-hidden');
@@ -37,7 +38,7 @@ async function onSubmit(event) {
   }
 }
 
-function createMarkup(data) {
+export function createMarkup(data) {
   const { results } = data;
   return results
     .map(({ poster_path, original_title, genre_ids, release_date, id }) => {
@@ -68,7 +69,7 @@ function createMarkup(data) {
     .join('');
 }
 
-function clearMarkup() {
+export function clearMarkup() {
   containerGallery.innerHTML = '';
 }
 

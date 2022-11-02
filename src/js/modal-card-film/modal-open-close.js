@@ -30,7 +30,6 @@ export async function onFilmCardClick(evt) {
   const movie = await api
     .fetchMoviesByID(filmId)
     .then(res => {
-      console.log(res);
       return res;
     })
     .catch(console.error());

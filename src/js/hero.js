@@ -1,10 +1,11 @@
 import ApiService from './ApiService';
 import { containerGallery } from './utils/refs';
 import { createMarkup } from './utils/createMarkup';
+import { currentPage } from './pagination-test/pagination-test';
 
 const apiMovie = new ApiService();
 
-async function homePage() {
+export async function homePage() {
   const res = await apiMovie.fetchTrendingMovies();
   const movieObj = res.data.results;
   localStorage.setItem('trendingFilms', JSON.stringify(movieObj));
