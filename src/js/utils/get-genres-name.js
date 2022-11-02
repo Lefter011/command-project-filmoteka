@@ -1,7 +1,7 @@
 export function getGenresName(movieID) {
     const genresID = JSON.parse(localStorage.getItem('genres'));
     if (!movieID) {
-        return
+        return ['Genre not specified']
     }
     return movieID.reduce((acc, item) => {
         const findGenre = genresID.find(el => Number(el.id) === Number(item));
