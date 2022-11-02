@@ -102,11 +102,11 @@ function createMarkupWatched() {
 
 function createMarkupQueue() {
   const queueMovies = JSON.parse(localStorage.getItem('queue'));
-  if (watchedMovies) {
+  if (queueMovies) {
     myLibraryList.classList.remove('visually-hidden');
     messageWithoutMovies.classList.add('visually-hidden');
   }
-  if (!watchedMovies) {
+  if (!queueMovies) {
     myLibraryList.classList.add('visually-hidden');
     messageWithoutMovies.classList.remove('visually-hidden');
     return;
