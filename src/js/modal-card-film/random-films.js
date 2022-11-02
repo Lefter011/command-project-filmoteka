@@ -364,9 +364,3 @@ export const films = [
     vote_count: 209,
   },
 ];
-
-<<<<<<< Updated upstream
-localStore.save('queue', films);
-=======
-createMarkup(films);
->>>>>>> Stashed changes

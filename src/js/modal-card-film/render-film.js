@@ -20,8 +20,6 @@ export function createModalCardMarkup(film) {
     original_title,
     genres,
   } = film;
-<<<<<<< Updated upstream
-=======
   const genresIds = genres.map(genre => genre.id);
   let genresNames = null;
   if (genresIds.length > 0) {
@@ -30,11 +28,7 @@ export function createModalCardMarkup(film) {
   } else {
     genresNames = 'Sorry, genres are not defined';
   }
->>>>>>> Stashed changes
-
-  const genresIds = genres.map(genre => genre.id);
-  const cutGenres = sliceGenres(genresIds);
-  const genresNames = getGenresName(cutGenres).join(', ');
+  
   const poster = poster_path
     ? '${BASE_PICTURE_URL}${mobileSize}${poster_path}'
     : 'https://i.postimg.cc/zG4yJ7P4/No-Image-Available.jpg';
