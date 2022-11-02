@@ -20,6 +20,11 @@ export async function onFilmCardClick(evt) {
   if (!evt.target.parentNode.classList.contains(targetClick)) {
     return;
   }
+  refs.backdrop.classList.remove('is-hidden');
+  refs.modal.classList.add('is-open');
+  refs.body.classList.add('modal-shown');
+  refs.body.addEventListener('click', onBackdropClick);
+  window.addEventListener('keydown', onEscClick);
   const parentOne = evt.target.parentNode;
   const filmId = parentOne.parentNode.dataset.id;
   const movie = await api
@@ -30,13 +35,11 @@ export async function onFilmCardClick(evt) {
     .catch(console.error());
   const markupDone = createModalCardMarkup(movie);
   addMarkupToCard(markupDone);
-  refs.backdrop.classList.remove('is-hidden');
-  refs.modal.classList.add('is-open');
-  refs.body.classList.add('modal-shown');
-  refs.body.addEventListener('click', onBackdropClick);
-  window.addEventListener('keydown', onEscClick);
-  addBtnsListeners();
   saveKeysToStorage();
+  const queueBtn = document.querySelector('button[data-modal-queue]');
+  const watchedBtn = document.querySelector('button[data-modal-watched]');
+  queueBtn.addEventListener('click', evt => onQueueClick(evt, movie));
+  watchedBtn.addEventListener('click', evt => onWatchedClick(evt, movie));
 }
 
 export function onCloseBtnClick() {
@@ -58,13 +61,6 @@ export function onEscClick(evt) {
   if (evt.code === 'Escape') {
     onCloseBtnClick();
   }
-}
-
-export function addBtnsListeners() {
-  const queueBtn = document.querySelector('button[data-modal-queue]');
-  const watchedBtn = document.querySelector('button[data-modal-watched]');
-  queueBtn.addEventListener('click', onQueueClick);
-  watchedBtn.addEventListener('click', onWatchedClick);
 }
 
 export function saveKeysToStorage() {

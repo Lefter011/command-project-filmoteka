@@ -1,7 +1,7 @@
 import { localStore } from './utils/loc-storage';
 import { WATCHED_KEY } from './modal-card-film/add-to-watched';
 
- export const films = [
+export const films = [
   {
     adult: false,
     backdrop_path: '/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg',
@@ -363,6 +363,3 @@ import { WATCHED_KEY } from './modal-card-film/add-to-watched';
     vote_count: 209,
   },
 ];
-
-
-localStore.save(WATCHED_KEY, films);

@@ -6,7 +6,7 @@ import './js/footer_modal';
 import './js/header-search';
 import './js/hero';
 import './js/utils/set-genres-to-localstorage';
-// import './js/pagination';
+import './js/pagination-ver2';
 
 import './js/utils/loc-storage';
 

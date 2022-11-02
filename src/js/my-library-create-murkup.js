@@ -103,10 +103,9 @@ function createMarkupQueue() {
     myLibrary.style.height = '100vh';
     myLibraryList.textContent = '';
     myLibraryList.textContent =
-      "Sorry you don't have any added movies. Create a new list now";
+      "Sorry you don't have any movies added. Create a new list now";
     return;
   }
-
   return queueMovies
     .map(
       ({
@@ -115,6 +114,7 @@ function createMarkupQueue() {
         genre_ids,
         release_date,
         vote_average,
+        id,
       }) => {
         const releaseYear = release_date.substring(0, 4);
         const vote = Number(vote_average).toFixed(1);
@@ -135,7 +135,7 @@ function createMarkupQueue() {
             />
             <h2 class="mylibrary__item-title js-modal-trigger">${original_title}</h2>
             <div class="mylibrary__item-text-wrapper js-modal-trigger">
-                <p class="mylibrary__item-genres">${slicedGenres}</p>
+                <p class="mylibrary__item-genres">${slicedGenres.join(', ')}</p>
                 <p class="mylibrary__item-text-separator">|</p>
                 <p class="mylibrary__item-release-arye">${releaseYear}</p>
                 <div class="reting-wrapper">
@@ -147,11 +147,4 @@ function createMarkupQueue() {
       }
     )
     .join('');
-}
-export function sliseGenres(genres) {
-  if (genres.length < 3) {
-    return genres;
-  } else {
-    return [...genres.slice(0, 2), 'Other'];
-  }
 }
