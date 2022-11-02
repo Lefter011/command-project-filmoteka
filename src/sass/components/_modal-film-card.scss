@@ -131,17 +131,17 @@
   height: 44px;
   padding: 10px;
   @include mq(tablet) {
-    width: 125px;
+    width: 144px;
   }
   @include mq(desktop) {
-    width: 136px;
+    width: 144px;
     padding: 15px;
   }
   text-transform: uppercase;
   text-align: center;
   font-size: 12px;
   border-radius: 5px;
-  
+
   background-color: var(--white);
   color: var(--dots-color);
   border: 1px solid var(--dots-color);
