@@ -38,6 +38,18 @@ export async function onFilmCardClick(evt) {
   saveKeysToStorage();
   const queueBtn = document.querySelector('button[data-modal-queue]');
   const watchedBtn = document.querySelector('button[data-modal-watched]');
+  const savedQueue = checkSavedFilms(movie);
+  const savedWatched = checkWatchedFilms(movie);
+
+  if (savedQueue) {
+    queueBtn.textContent = 'Remove from queue';
+    queueBtn.style.width = 'fit-content';
+  }
+  if (savedWatched) {
+    watchedBtn.textContent = 'Remove from watched';
+    watchedBtn.style.width = 'fit-content';
+  }
+
   queueBtn.addEventListener('click', evt => onQueueClick(evt, movie));
   watchedBtn.addEventListener('click', evt => onWatchedClick(evt, movie));
 }
