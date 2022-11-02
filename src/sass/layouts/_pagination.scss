@@ -20,14 +20,22 @@
 
 .pagination-button {
   padding: 0;
-  background-color: white;
-  border: none;
-  color: var(--accent);
-  cursor: pointer;
-  font-family: Roboto;
   font-weight: 500;
+border-radius: 2px;
+
+  text-transform: uppercase;
+  width: 40px;
+  height: 40px;
   font-size: 12px;
-  line-height: 1.333;
+  line-height: 1.33;
+
+
+  color: #000000;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  justify-content: center;
+
 }
 
 .pagination--current {
@@ -36,6 +44,9 @@
   border-radius: 5px;
   background-color: var(--accent);
   color: white;
+  font-size: 12px;
+    line-height: 1.33;
+
 }
 
 .dots,
@@ -60,8 +71,20 @@
 
 .arrow-left {
   background-image: url(../img/pagination/arrow-left.svg);
+    background-repeat: no-repeat;
+      background-position: 50%;
+      margin-right: 16px;
+      border-radius: 5px;
+        background-color: #f7f7f7;
+        border: none;
 }
 
 .arrow-right {
   background-image: url(../img/pagination/arrow-right.svg);
+  background-repeat: no-repeat;
+    background-position: 50%;
+    margin-right: 16px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    border: none;
 }
