@@ -24,6 +24,13 @@ export default class ApiService {
     },
   };
 
+  get query() {
+    return this.#moviesByNameSearchParams.params.query;
+  }
+  set query(newQuery) {
+    this.#moviesByNameSearchParams.params.query = newQuery;
+  }
+
   async fetchGenres() {
     const url = urls.BASE_URL + urls.GENRES_PATH_URL;
     try {
@@ -37,7 +44,7 @@ export default class ApiService {
 
   async fetchTrendingMovies(page = 1) {
     const url = urls.BASE_URL + urls.TRENDINGS_PATH_URL,
-      popularMoviesSearchParams = { params: { api_key: API_KEY, page } };
+      popularMoviesSearchParams = { params: { api_key: API_KEY, page: page } };
     try {
       const response = await axios.get(url, popularMoviesSearchParams);
       return response;

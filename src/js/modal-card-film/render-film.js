@@ -20,6 +20,17 @@ export function createModalCardMarkup(film) {
     original_title,
     genres,
   } = film;
+<<<<<<< Updated upstream
+=======
+  const genresIds = genres.map(genre => genre.id);
+  let genresNames = null;
+  if (genresIds.length > 0) {
+    const cutGenres = sliceGenres(genresIds);
+    genresNames = getGenresName(cutGenres).join(', ');
+  } else {
+    genresNames = 'Sorry, genres are not defined';
+  }
+>>>>>>> Stashed changes
 
   const genresIds = genres.map(genre => genre.id);
   const cutGenres = sliceGenres(genresIds);

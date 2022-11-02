@@ -1,4 +1,6 @@
 import { localStore } from '../utils/loc-storage';
+import { createMarkup } from '../utils/createMarkup';
+
 
 export const films = [
   {
@@ -363,4 +365,5 @@ export const films = [
   },
 ];
 
+<<<<<<< Updated upstream
 localStore.save('queue', films);

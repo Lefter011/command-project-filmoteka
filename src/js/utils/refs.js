@@ -11,6 +11,8 @@ const containerPag = document.querySelector('.pag');
 //Searching form
 const searchFormRef = document.querySelector('.search-form');
 
+const inputRef = document.querySelector('input.js-search')
+
 // movie card in Modal
 const movieCardModalRef = document.querySelector('.js-movie-card');
 
@@ -36,6 +38,7 @@ export {
   containerGallery,
   containerPag,
   searchFormRef,
+  inputRef,
   movieCardModalRef,
   accordionRef,
   spinnerRef,

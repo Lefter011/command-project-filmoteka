@@ -7,3 +7,4 @@ import './js/my-library-create-murkup';
 import './js/utils/loc-storage';
 
 import './js/modal-card-film/modal-library';
+import './js/pagination-test/pagination-test';
