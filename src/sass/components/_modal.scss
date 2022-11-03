@@ -7,7 +7,7 @@
   opacity: 1;
   pointer-events: all;
   visibility: visible;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
 
   @include default-transition(opacity);
   @include default-transition(visibility);
