@@ -55,6 +55,7 @@ export async function onFilmCardClick(evt) {
 }
 
 export function onCloseBtnClick() {
+  refs.containerForInfo.innerHTML = '';
   refs.backdrop.classList.add('is-hidden');
   refs.modal.classList.remove('is-open');
   refs.body.classList.remove('modal-shown');
