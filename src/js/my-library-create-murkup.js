@@ -120,7 +120,7 @@ export function createMarkupQueue() {
     createLibraryMarkup(cutMovies);
     return;
   }
-  createLibraryMarkup(queueMovies);
+  return createLibraryMarkup(queueMovies);
 }
 
 export function createLibraryMarkup(movies) {
