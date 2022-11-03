@@ -77,4 +77,5 @@ addBackToTop({
   diameter: 45,
   backgroundColor: 'transparent',
   textColor: '#e5882c',
+
 });
