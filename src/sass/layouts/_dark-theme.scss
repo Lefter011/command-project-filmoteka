@@ -1,6 +1,10 @@
 .light-theme {
     background-color: #ffffff;
     color: #000000;
+
+    .mylibrari__main {
+        background-color: #ffffff;
+    }
 }
 
 .dark-theme {
@@ -11,6 +15,14 @@
                 color: var(--white);
             }
         }
+    .mylibrari__main {
+        background-color: #333333;
+
+        .mylibrary__item-title {
+            color: var(--white);
+        }
+    }
+
 }
 
 .grey-background-theme {
