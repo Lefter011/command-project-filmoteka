@@ -6,7 +6,6 @@ import './js/footer_modal';
 import './js/header-search';
 import './js/hero';
 import './js/utils/set-genres-to-localstorage';
-import './js/pagination-ver2';
 
 import './js/utils/loc-storage';
 
@@ -17,5 +16,6 @@ import './js/modal-card-film/save-films-to-storage';
 import './js/modal-card-film/add-to-watched';
 import './js/modal-card-film/add-to-queue';
 import './js/modal-card-film/check-saved-films';
+
 import './js/pagination-test/pagination-test';
 import './js/pagination-test/pagin-search';
