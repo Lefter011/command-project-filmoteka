@@ -70,7 +70,7 @@ border-radius: 2px;
 }
 
 .arrow-left {
-  background-image: url(../img/pagination/arrow-left.svg);
+  background-image: url(../img/pagination/arrow-right.svg);
     background-repeat: no-repeat;
       background-position: 50%;
       margin-right: 16px;
@@ -80,7 +80,7 @@ border-radius: 2px;
 }
 
 .arrow-right {
-  background-image: url(../img/pagination/arrow-right.svg);
+  background-image: url(../img/pagination/arrow-left.svg);
   background-repeat: no-repeat;
     background-position: 50%;
     margin-right: 16px;
