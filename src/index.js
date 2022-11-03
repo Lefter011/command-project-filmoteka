@@ -7,7 +7,7 @@ import './js/header-search';
 import './js/hero';
 import './js/utils/set-genres-to-localstorage';
 import './js/pagination-ver2';
-import './js/new-team-modal'
+import './js/new-team-modal';
 
 import './js/utils/loc-storage';
 
