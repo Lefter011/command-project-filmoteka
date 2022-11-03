@@ -7,6 +7,7 @@ import './js/random-films';
 import './js/footer_modal';
 import './js/my-library-create-murkup';
 
+import './js/theme';
 
 import './js/modal-card-film/modal-library';
 

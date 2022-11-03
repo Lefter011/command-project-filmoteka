@@ -7,12 +7,10 @@ const Theme = {
 
 const body = document.querySelector("body");
 const footer = document.querySelector("footer");
-;
 
 const delClassElem = () => {
   body.classList.remove(Theme.LIGHT, Theme.DARK);
   footer.classList.remove(Theme.LIGHT, Theme.GREY);
-
 };
 const themeSwitcher = document.querySelector("#theme-switch-toggle");
 
@@ -26,13 +24,11 @@ themeSwitcher.addEventListener("change", () => {
   } else {
     localStorage.setItem("Theme", "lightTheme");
     body.classList.add(Theme.LIGHT);
-  
   }
 });
 if (localStorage.getItem("Theme") === "darkTheme") {
   themeSwitcher.setAttribute("checked", true);
   body.classList.add(Theme.DARK);
   footer.classList.add(Theme.GREY);
-
 }
 

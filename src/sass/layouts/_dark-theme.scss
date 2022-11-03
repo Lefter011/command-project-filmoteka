@@ -1,13 +1,4 @@
 .light-theme {
-<<<<<<< Updated upstream
-    background-color: #ffffff;
-    color: #000000;
-}
-
-.dark-theme {
-    background-color: #212121;
-    color: #ffffff;
-=======
     background-color: var(--main-background-color);
     color: var(--dots-color);
 
@@ -24,7 +15,6 @@
                 color: var(--white);
             }
         }
-  
         .mylibrari__main{
             background-color: var(--dark-background-color);
             .mylibrary__item-title {
@@ -53,8 +43,6 @@
                     color: var(--dots-color);
                 }
         
-
->>>>>>> Stashed changes
 }
 
 .grey-background-theme {
@@ -100,6 +88,7 @@
 }
 
 .theme-switch-icon {
+
     fill: var(--accent);
     color: currentColor;
     height: 20px;
@@ -171,25 +160,5 @@
 .theme-switch-toggle:active+.theme-switch-track {
     box-shadow: 0 0 0 3px var(--accent);
 }
-<<<<<<< Updated upstream
-.stats__value{
-    color: #333333;
+    box-shadow: 0 0 0 3px #ff6b01;
 }
-// .card__name{
-//     color: #ffffff;
-// }
-=======
->>>>>>> Stashed changes
-
-
-
-<<<<<<< Updated upstream
-// button.last-button{
-//     color: #ffffff;
-// }
-// .mylibrari__main {
-//     background-color: #333333;
-// }
-=======
-
->>>>>>> Stashed changes
