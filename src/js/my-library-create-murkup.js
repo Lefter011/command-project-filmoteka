@@ -28,7 +28,7 @@ export function onWatchedClick() {
   myLibraryList.insertAdjacentHTML('beforeend', createMarkupWatched());
 }
 
-function onQueueClick() {
+export function onQueueClick() {
   clearPage();
   queueBTN.classList.add('active-btn');
   queueBTN.classList.remove('inactive-btn');
