@@ -1,101 +1,59 @@
 .header {
     height: 230px;
     background-color: rgba(0, 0, 0, 0.56);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: repeat;
 
-    background-image: url(../img/header/background-img-mob.jpg);
-    @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-            background-image: url(../img/header/background-img-mob@2x.jpg);
+    background-image: url(/src/img/header/background-img-mob.jpg);
+    @include mq ('retina') {
+        background-image: url(/src/img/header/background-img-mob@2x.jpg);
+    }
+
+    @include mq ('tablet') {
+        height: 219px;
+        background-image: url(/src/img/header/background-img-tabl.jpg);
+
+        @include mq ('retina') {
+            background-image: url(/src/img/header/background-img-tabl@2x.jpg);
         }
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
+    }
+
+    @include mq ('desktop') {
         height: 216px;
-        background-image: url(../img/header/background-img-tabl.jpg);
-        @media (min-device-pixel-ratio: 2),
-            (min-resolution: 192dpi),
-            (min-resolution: 2dppx) {
-                background-image: url(../img/header/background-img-tabl@2x.jpg);
-            }
-    }
-    @media screen and (min-width: 1280px) {
-        background-image: url(../img/header/background-img-desk.jpg);
-    }
-    @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-            background-image: url(../img/header/background-img-desk@2x.jpg);
-        }
-}
-.gen {
-    width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    
-    @media screen and (min-width: 768px) {
-        width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-    
-    @media screen and (min-width: 1280px) {
-        width: 1280px;
-    }
-}
+        background-image: url(/src/img/header/background-img-desk.jpg);
 
-.page-head {
+        @include mq ('retina') {
+            background-image: url(/src/img/header/background-img-desk@2x.jpg);
+        }
+    }
+}
+.nav {
     display: flex;
     align-items: center;
-    margin-bottom: 54px;
-
-    @media screen and (min-width: 768px) {
-        margin-bottom: 40px;
-    }
+    padding-top: 40px;
 }
-
 .logo__icon {
     width: 24px;
     height: 24px;
     fill: #ffffff;
-    margin-right: 112px;
-
-    @media screen and (min-width: 768px) {
-        margin-right: 8px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        margin-right: 10px;
-    }
 }
 
 .logo__link {
-    @media screen and (max-width: 767px) {
-        display: none;
-    }
-
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 35px;
-    color: #ffffff;
-    margin-right: 112px;
-
-    @media screen and (min-width: 768px) {
-        margin-right: 387px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        margin-right: 898px;
+    display: none;
+    @include mq ('tablet') {
+        display: block;
+        margin-left: 10px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.17;
+        color: #ffffff;
     }
 }
 
 .nav__list {
     display: flex;
-    height: 24px;
+    margin-left: auto;
 }
 
 .nav__item {
@@ -103,7 +61,7 @@
 }
 
 .nav__item:not(:last-child) {
-    margin-right: 40px;
+    margin-right: 39px;
 }
 
 .nav__link {
@@ -130,13 +88,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 62px;
 }
 
 .search-form {
     display: inline-block;
     position: relative;
     margin-bottom: 16px;
-    @media screen and (min-width: 768px) {
+    @include mq ('tablet') {
         margin-bottom: 20px;
     }
 }
@@ -154,11 +113,11 @@
     color: #FFFFFF;
     width: 280px;
 
-    @media screen and (min-width: 768px) {
+    @include mq ('tablet') {
         width: 336px;
     }
 
-    @media screen and (min-width: 1280px) {
+    @include mq ('desktop') {
         width: 394px;
     }
 
