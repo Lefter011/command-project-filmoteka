@@ -12,6 +12,7 @@ import {
   onBackdropClick,
 } from './modal-open-close';
 import { refs } from './modal-refs';
+import { onWatchedClick } from './add-to-watched';
 import { checkSavedFilms, checkWatchedFilms } from './check-saved-films';
 import { markup, addMarkupToCard } from './render-film';
 

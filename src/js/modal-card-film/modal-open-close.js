@@ -1,6 +1,6 @@
 import { refs } from './modal-refs';
-import { watchedClickHandler, WATCHED_KEY } from './add-to-watched';
-import { queueClickHandler, LINE_KEY } from './add-to-queue';
+import { onWatchedClick, WATCHED_KEY } from './add-to-watched';
+import { onQueueClick, LINE_KEY } from './add-to-queue';
 import { localStore } from '../utils/loc-storage';
 import { checkSavedFilms, checkWatchedFilms } from './check-saved-films';
 import ApiService from '../ApiService';
@@ -50,12 +50,11 @@ export async function onFilmCardClick(evt) {
     watchedBtn.style.width = 'fit-content';
   }
 
-  queueBtn.addEventListener('click', evt => queueClickHandler(evt, movie));
-  watchedBtn.addEventListener('click', evt => watchedClickHandler(evt, movie));
+  queueBtn.addEventListener('click', evt => onQueueClick(evt, movie));
+  watchedBtn.addEventListener('click', evt => onWatchedClick(evt, movie));
 }
 
 export function onCloseBtnClick() {
-  refs.containerForInfo.innerHTML = '';
   refs.backdrop.classList.add('is-hidden');
   refs.modal.classList.remove('is-open');
   refs.body.classList.remove('modal-shown');

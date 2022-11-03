@@ -1,9 +1,9 @@
 import { localStore } from '../utils/loc-storage';
 import { checkWatchedFilms } from './check-saved-films';
-import { onWatchedClick, myLibraryList } from '../my-library-create-murkup';
+
 export const WATCHED_KEY = `watched`;
 
-export function watchedClickHandler(evt, arg) {
+export function onWatchedClick(evt, arg) {
   evt.preventDefault();
   const watchedBtn = document.querySelector('button[data-modal-watched]');
   const savedMovies = localStore.load(WATCHED_KEY);
@@ -12,6 +12,7 @@ export function watchedClickHandler(evt, arg) {
   if (isSaved) {
     const index = savedMovies.findIndex(movie => movie.id === isSaved.id);
     const deleted = savedMovies.splice(index, 1);
+    console.log('onWatchedClick   deleted', deleted);
     localStore.save(WATCHED_KEY, savedMovies);
     watchedBtn.textContent = 'Add to watched';
   } else {
@@ -21,6 +22,4 @@ export function watchedClickHandler(evt, arg) {
     watchedBtn.style.width = 'fit-content';
     watchedBtn.style.height = 'auto';
   }
-
-  myLibraryList.insertAdjacentHTML('beforeend', onWatchedClick());
 }
