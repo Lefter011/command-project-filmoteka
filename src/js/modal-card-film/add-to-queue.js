@@ -9,12 +9,13 @@ export function onQueueClick(evt, arg) {
   const savedMovies = localStore.load(LINE_KEY);
   const isSaved = checkSavedFilms(arg);
   if (isSaved) {
-    const index = savedMovies.indexOf(isSaved);
-    savedMovies.splice(index, 1);
+    const index = savedMovies.findIndex(movie => movie.id === isSaved.id);
+    const deleted = savedMovies.splice(index, 1);
+    console.log('onQueueClick   deleted', deleted)
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Add to queue';
   } else {
-    savedMovies.push(arg);
+    savedMovies.unshift(arg);
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Remove from queue';
     queueBtn.style.width = 'fit-content';
