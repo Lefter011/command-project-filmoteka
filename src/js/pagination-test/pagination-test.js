@@ -133,20 +133,18 @@ async function trendingMoviesPagFetch(page) {
   }
 }
 
+// let currentPage = 1;
 
+// const valueRef = document.querySelector('#value');
+// const counterBtnRef = document.querySelectorAll('#counter button');
 
-let currentPage = 1;
-
-const valueRef = document.querySelector('#value');
-const counterBtnRef = document.querySelectorAll('#counter button');
-
-counterBtnRef[0].addEventListener('click', () => {
-    counterValue -= 1;
-    valueRef.textContent = counterValue;
-});
-counterBtnRef[1].addEventListener('click', () => {
-    counterValue += 1;
-    valueRef.textContent = counterValue;
-});
+// counterBtnRef[0].addEventListener('click', () => {
+//     counterValue -= 1;
+//     valueRef.textContent = counterValue;
+// });
+// counterBtnRef[1].addEventListener('click', () => {
+//     counterValue += 1;
+//     valueRef.textContent = counterValue;
+// });
 
 export { currentPage };
