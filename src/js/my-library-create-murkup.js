@@ -1,5 +1,6 @@
 import { getGenresName } from './utils/get-genres-name';
 import { sliceGenres } from './utils/slice-genres';
+import { addBackToTop } from 'vanilla-back-to-top';
 
 const queueBTN = document.querySelector('.queue-btn');
 const watchedBTN = document.querySelector('.watched-btn');
@@ -48,7 +49,7 @@ export function clearPage() {
 
 export function createMarkupWatched() {
   const watchedMovies = JSON.parse(localStorage.getItem('watched'));
-  if (!watchedMovies) {
+  if (!watchedMovies || watchedMovies.length === 0) {
     myLibraryList.classList.add('visually-hidden');
     messageWithoutMovies.classList.remove('visually-hidden');
     myLibrary.style.height = '100vh';
@@ -159,3 +160,9 @@ export function createLibraryMarkup(movies) {
     )
     .join('');
 }
+
+addBackToTop({
+  diameter: 45,
+  backgroundColor: 'transparent',
+  textColor: '#e5882c',
+});
