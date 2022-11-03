@@ -20,7 +20,6 @@
             .mylibrary__item-title {
                 color: var(--white);
             }}
-       
         button[data-index]{
             color: var(--white);
         }
@@ -159,6 +158,4 @@
 .theme-switch-toggle:hover+.theme-switch-track,
 .theme-switch-toggle:active+.theme-switch-track {
     box-shadow: 0 0 0 3px var(--accent);
-}
-    box-shadow: 0 0 0 3px #ff6b01;
 }
