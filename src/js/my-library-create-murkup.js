@@ -105,7 +105,7 @@ function createMarkupWatched() {
 
 function createMarkupQueue() {
   const queueMovies = JSON.parse(localStorage.getItem('queue'));
-  if (!queueMovies || queueMovies.length === 0) {
+    if (!queueMovies || queueMovies.length === 0) {
     myLibraryList.classList.add('visually-hidden');
     messageWithoutMovies.classList.remove('visually-hidden');
     myLibrary.style.height = '100vh';
@@ -115,7 +115,6 @@ function createMarkupQueue() {
     myLibraryList.classList.remove('visually-hidden');
     messageWithoutMovies.classList.add('visually-hidden');
   }
-  
   return queueMovies
     .map(
       ({
