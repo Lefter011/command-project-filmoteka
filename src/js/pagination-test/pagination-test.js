@@ -48,21 +48,21 @@ function onPaginationClick(event) {
     if (event.target.classList.contains('arrow-right') && currentPage < 1000) {
       btns.forEach(el => el.classList.remove('pagination--current'));
       btn1Ref.classList.add('pagination--current');
-      btn1Ref.textContent = Number(btn1Ref.textContent) + 1;
-      btn2Ref.textContent = Number(btn2Ref.textContent) + 1;
-      btn3Ref.textContent = Number(btn3Ref.textContent) + 1;
-      btn4Ref.textContent = Number(btn4Ref.textContent) + 1;
-      btn5Ref.textContent = Number(btn5Ref.textContent) + 1;
+      btn1Ref.textContent = Number(btn1Ref.textContent) + 5;
+      btn2Ref.textContent = Number(btn2Ref.textContent) + 5;
+      btn3Ref.textContent = Number(btn3Ref.textContent) + 5;
+      btn4Ref.textContent = Number(btn4Ref.textContent) + 5;
+      btn5Ref.textContent = Number(btn5Ref.textContent) + 5;
       currentPage = btn1Ref.textContent;
     }
 
-    if (event.target.classList.contains('arrow-left') && currentPage >= 2) {
+    if (event.target.classList.contains('arrow-left') && currentPage >= 5) {
       btns.forEach(el => el.classList.remove('pagination--current'));
-      btn1Ref.textContent = Number(btn1Ref.textContent) - 1;
-      btn2Ref.textContent = Number(btn2Ref.textContent) - 1;
-      btn3Ref.textContent = Number(btn3Ref.textContent) - 1;
-      btn4Ref.textContent = Number(btn4Ref.textContent) - 1;
-      btn5Ref.textContent = Number(btn5Ref.textContent) - 1;
+      btn1Ref.textContent = Number(btn1Ref.textContent) - 5;
+      btn2Ref.textContent = Number(btn2Ref.textContent) - 5;
+      btn3Ref.textContent = Number(btn3Ref.textContent) - 5;
+      btn4Ref.textContent = Number(btn4Ref.textContent) - 5;
+      btn5Ref.textContent = Number(btn5Ref.textContent) - 5;
       btn5Ref.classList.add('pagination--current');
       currentPage = btn5Ref.textContent;
     }
@@ -95,7 +95,7 @@ function onPaginationClick(event) {
       lastPageRef.hidden = true;
     }
 
-    if (Number(currentPage) >= 3) {
+    if (Number(currentPage) > 5) {
       leftArrowRef.hidden = false;
       prevDotsRef.hidden = false;
       firstPageRef.hidden = false;
@@ -132,19 +132,5 @@ async function trendingMoviesPagFetch(page) {
     console.error('Error with search fetch' + error);
   }
 }
-
-// let currentPage = 1;
-
-// const valueRef = document.querySelector('#value');
-// const counterBtnRef = document.querySelectorAll('#counter button');
-
-// counterBtnRef[0].addEventListener('click', () => {
-//     counterValue -= 1;
-//     valueRef.textContent = counterValue;
-// });
-// counterBtnRef[1].addEventListener('click', () => {
-//     counterValue += 1;
-//     valueRef.textContent = counterValue;
-// });
 
 export { currentPage };
