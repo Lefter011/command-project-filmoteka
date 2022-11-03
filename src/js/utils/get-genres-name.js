@@ -1,9 +1,9 @@
-export function getGenresName(movieID) {
+export function getGenresName(movieGenreID) {
     const genresID = JSON.parse(localStorage.getItem('genres'));
-    if (!movieID) {
-        return ['Genre not specified']
+    if (movieGenreID.length === 0) {
+        return ['Genre not available']
     }
-    return movieID.reduce((acc, item) => {
+    return movieGenreID.reduce((acc, item) => {
         const findGenre = genresID.find(el => Number(el.id) === Number(item));
         return findGenre ? [...acc, findGenre.name] : acc;
     }, []);
