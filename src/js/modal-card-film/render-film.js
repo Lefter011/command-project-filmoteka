@@ -115,6 +115,13 @@ export function createModalCardMarkup(film) {
       >
         add to queue
       </button>
+      <button
+        type="button"
+        class="modal__btn"
+        data-modal-trailer
+      >
+        Trailer
+      </button>
     </div>
   </div>
 </div>`;

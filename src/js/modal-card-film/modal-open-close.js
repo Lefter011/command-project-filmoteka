@@ -38,6 +38,7 @@ export async function onFilmCardClick(evt) {
   saveKeysToStorage();
   const queueBtn = document.querySelector('button[data-modal-queue]');
   const watchedBtn = document.querySelector('button[data-modal-watched]');
+  const trailerBtn = document.querySelector('button[data-modal-watched]');
   const savedQueue = checkSavedFilms(movie);
   const savedWatched = checkWatchedFilms(movie);
 
