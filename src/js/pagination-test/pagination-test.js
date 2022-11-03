@@ -8,7 +8,6 @@ const api = new ApiService();
 const butPlus = document.querySelector('.button2');
 const butMinus = document.querySelector('.button1');
 
-
 butPlus.addEventListener('click', onButtonClickPlus);
 butMinus.addEventListener('click', onButtonClickMinus);
 
@@ -26,14 +25,16 @@ btn4Ref.addEventListener('click', clickToPage4);
 btn5Ref.addEventListener('click', clickToPage5);
 btn6Ref.addEventListener('click', clickToPage6);
 
-// const totalPage = api.fetchTrendingMovies(currentPage);
+const res = localStorage.getItem('query');
+const arrayEl = JSON.parse(res);
+const totalPage = arrayEl.total_pages;
+console.log(totalPage);
 
-btn1Ref.hidden = true;
 btn2Ref.hidden = true;
 btn3Ref.textContent = 2;
 btn4Ref.textContent = 3;
 btn5Ref.textContent = 1;
-// btn6Ref.textContent = totalPage;
+btn6Ref.textContent = 1000;
 
 let currentPage = 1;
 
@@ -48,9 +49,8 @@ async function onButtonClickMinus() {
     currentPage -= 1;
     renderPage();
     checkPageNumber();
-  }
-  else {
-    return console.log("error");
+  } else {
+    return console.log('error');
   }
 }
 
@@ -91,32 +91,31 @@ async function clickToPage6() {
 }
 
 async function renderPage() {
-      try {
-      const res = await api.fetchTrendingMovies(currentPage);
-      const data = res.data.results;
-      const markup = createMarkup(data);
-      clearMarkup();
-      containerGallery.innerHTML = markup;
-      // window.scrollTo({ top: 0, behavior: 'smooth' });
-      document.getElementById('currentPage').textContent = currentPage;
-    } catch (error) {
-      console.error('Error with search fetch' + error);
-    }
+  try {
+    const res = await api.fetchTrendingMovies(currentPage);
+    const data = res.data.results;
+    const markup = createMarkup(data);
+    clearMarkup();
+    containerGallery.innerHTML = markup;
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('currentPage').textContent = currentPage;
+  } catch (error) {
+    console.error('Error with search fetch' + error);
+  }
 }
 
 async function checkPageNumber() {
-    btn3Ref.textContent = currentPage + 1;
-    btn4Ref.textContent = currentPage + 2;
-    if (currentPage >= 3) {
-      btn1Ref.hidden = false;
-      btn2Ref.hidden = false;
-      btn1Ref.textContent = currentPage - 2;
-      btn2Ref.textContent = currentPage - 1;
-    } else {
-      btn1Ref.hidden = true;
-      btn2Ref.hidden = true;
-    }
+  btn3Ref.textContent = currentPage + 1;
+  btn4Ref.textContent = currentPage + 2;
+  if (currentPage >= 3) {
+    btn1Ref.hidden = false;
+    btn2Ref.hidden = false;
+    btn1Ref.textContent = currentPage - 2;
+    btn2Ref.textContent = currentPage - 1;
+  } else {
+    btn1Ref.hidden = true;
+    btn2Ref.hidden = true;
+  }
 }
-
 
 export { currentPage };

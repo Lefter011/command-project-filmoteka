@@ -25,7 +25,10 @@ export async function onSubmit(event, page) {
     return;
   }
   api.query = searchQuery;
+
   const data = await api.getMoviesByName(searchQuery, page);
+  localStorage.setItem('query', JSON.stringify(data));
+
   if (data.total_results === 0) {
     notifyBRef.classList.add('visually-hidden');
     notifyARef.classList.remove('visually-hidden');
@@ -77,5 +80,4 @@ addBackToTop({
   diameter: 45,
   backgroundColor: 'transparent',
   textColor: '#e5882c',
-
 });
