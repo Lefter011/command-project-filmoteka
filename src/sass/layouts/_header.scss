@@ -35,7 +35,13 @@
 .logo__icon {
     width: 24px;
     height: 24px;
-    fill: #ffffff;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+        transform: rotate(360deg);
+    }
 }
 
 .logo__link {
@@ -48,6 +54,14 @@
         font-size: 30px;
         line-height: 1.17;
         color: #ffffff;
+        transition-property: transform;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &:hover,
+        &:focus {
+            transform: skewX(-15deg);
+        }
     }
 }
 
@@ -58,6 +72,14 @@
 
 .nav__item {
     position: relative;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        
+    &:hover,
+    &:focus {
+        transform: skewX(-15deg);
+    }
 }
 
 .nav__item:not(:last-child) {
@@ -71,6 +93,7 @@
     line-height: 14px;
     text-transform: uppercase;
     color: #ffffff;
+
 }
 
 .active::after {
@@ -106,6 +129,14 @@
     border-left: none;
     border-right: none;
     border-bottom: 0.5px solid #FFFFFF;
+    transition-property: border-bottom;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover,
+    &:focus {
+        border-bottom: 0.5px solid #FF001B;
+    }
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 14px;
