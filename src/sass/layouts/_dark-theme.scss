@@ -6,6 +6,11 @@
 .dark-theme {
     background-color: #212121;
     color: #ffffff;
+    .hero {
+            .card__name {
+                color: var(--white);
+            }
+        }
 }
 
 .grey-background-theme {
@@ -157,3 +162,4 @@ div#back-to-top{
 // .mylibrari__main {
 //     background-color: #333333;
 // }
+
