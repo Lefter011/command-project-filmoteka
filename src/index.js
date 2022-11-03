@@ -1,5 +1,5 @@
 import './js/utils/handlebars-helpers';
-
+import './js/theme';
 import './js/footer_modal';
 // import { localStorageFilms } from
 
@@ -19,3 +19,4 @@ import './js/modal-card-film/add-to-queue';
 import './js/modal-card-film/check-saved-films';
 import './js/pagination-test/pagination-test';
 import './js/pagination-test/pagin-search';
+
