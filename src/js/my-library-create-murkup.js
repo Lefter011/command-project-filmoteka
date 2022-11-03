@@ -4,7 +4,7 @@ import { addBackToTop } from 'vanilla-back-to-top';
 
 export const queueBTN = document.querySelector('.queue-btn');
 const watchedBTN = document.querySelector('.watched-btn');
-const myLibraryList = document.querySelector('.mylibrary__list');
+export const myLibraryList = document.querySelector('.mylibrary__list');
 const myLibrary = document.querySelector('.mylibrary');
 const messageWithoutMovies = document.querySelector('.no-list');
 
@@ -18,7 +18,7 @@ function onLoadPage() {
   myLibraryList.insertAdjacentHTML('beforeend', createMarkupWatched());
 }
 
-function onWatchedClick() {
+export function onWatchedClick() {
   clearPage();
   queueBTN.classList.add('inactive-btn');
   queueBTN.classList.remove('active-btn');
@@ -28,7 +28,7 @@ function onWatchedClick() {
   myLibraryList.insertAdjacentHTML('beforeend', createMarkupWatched());
 }
 
-function onQueueClick() {
+export function onQueueClick() {
   clearPage();
   queueBTN.classList.add('active-btn');
   queueBTN.classList.remove('inactive-btn');
