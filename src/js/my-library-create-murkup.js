@@ -120,7 +120,6 @@ export function createMarkupQueue() {
     createLibraryMarkup(cutMovies);
     return;
   }
-
   createLibraryMarkup(queueMovies);
 }
 

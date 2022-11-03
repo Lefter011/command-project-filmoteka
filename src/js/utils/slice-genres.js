@@ -1,6 +1,6 @@
 export function sliceGenres(genres) { 
     
-    if (genres.length < 3) {
+    if (genres.length < 4) {
         
         return genres
     } else {
