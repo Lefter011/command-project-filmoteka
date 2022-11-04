@@ -2,6 +2,8 @@ import { localStore } from '../utils/loc-storage';
 import { checkSavedFilms } from './check-saved-films';
 
 export const LINE_KEY = `queue`;
+const myLibrary = document.querySelector('.mylibrary');
+
 
 export function onQueueClick(evt, arg) {
   evt.preventDefault();
@@ -14,6 +16,9 @@ export function onQueueClick(evt, arg) {
     console.log('onQueueClick   deleted', deleted)
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Add to queue';
+    if (savedMovies.length === 0 & myLibrary) {
+      myLibrary.style.height = '100vh';
+    }
   } else {
     savedMovies.unshift(arg);
     localStore.save(LINE_KEY, savedMovies);

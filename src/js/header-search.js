@@ -23,6 +23,9 @@ export async function onSubmit(event, page) {
   if (!searchQuery) {
     notifyARef.classList.add('visually-hidden');
     notifyBRef.classList.remove('visually-hidden');
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
     return;
   }
   api.query = searchQuery;
@@ -58,6 +61,9 @@ export async function onSubmit(event, page) {
   if (data.total_results === 0) {
     notifyBRef.classList.add('visually-hidden');
     notifyARef.classList.remove('visually-hidden');
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   } else {
     notifyARef.classList.add('visually-hidden');
     notifyBRef.classList.add('visually-hidden');

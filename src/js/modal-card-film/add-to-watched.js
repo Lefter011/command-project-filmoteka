@@ -2,6 +2,7 @@ import { localStore } from '../utils/loc-storage';
 import { checkWatchedFilms } from './check-saved-films';
 
 export const WATCHED_KEY = `watched`;
+const myLibrary = document.querySelector('.mylibrary');
 
 export function onWatchedClick(evt, arg) {
   evt.preventDefault();
@@ -15,6 +16,9 @@ export function onWatchedClick(evt, arg) {
     console.log('onWatchedClick   deleted', deleted);
     localStore.save(WATCHED_KEY, savedMovies);
     watchedBtn.textContent = 'Add to watched';
+    if (savedMovies.length === 0 & myLibrary) {
+      myLibrary.style.height = '100vh';
+    }
   } else {
     savedMovies.unshift(arg);
     localStore.save(WATCHED_KEY, savedMovies);
