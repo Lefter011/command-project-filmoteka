@@ -87,19 +87,26 @@ async function clickToPage4() {
 async function clickToPage5() {
   currentPage = 1;
   checkPageNumber();
+
+  btn3Ref.hidden = false;
+  btn4Ref.hidden = false;
+  butMinus.hidden = true;
+  butPlus.hidden = false;
+  btn6Ref.hidden = false;
+
+  btn3Ref.textContent = Number(currentPage) + 1;
+  btn4Ref.textContent = Number(currentPage) + 2;
   return renderPage();
 }
 
 async function clickToPage6() {
   currentPage = btn6Ref.textContent;
   checkPageNumber();
-  renderPage();
-  if (currentPage >= 998) {
-    btn3Ref.hidden = true;
-    btn4Ref.hidden = true;
-    btn6Ref.hidden = true;
-    butPlus.hidden = true;
-  }
+
+  butMinus.hidden = false;
+  btn5Ref.hidden = false;
+  
+  return renderPage();
 }
 
 async function renderPage() {
@@ -121,6 +128,7 @@ async function checkPageNumber() {
   btn4Ref.textContent = Number(currentPage) + 2;
 
   if (currentPage >= 3 && currentPage <= 997) {
+    butMinus.hidden = false;
     btn1Ref.hidden = false;
     btn2Ref.hidden = false;
     btn5Ref.hidden = false;
@@ -132,7 +140,8 @@ async function checkPageNumber() {
     btn4Ref.hidden = false;
     butPlus.hidden = false;
     btn6Ref.hidden = false;
-  } else {
+  }
+  if (currentPage < 3) {
     btn1Ref.hidden = true;
     btn2Ref.hidden = true;
     btn5Ref.hidden = true;
@@ -144,6 +153,17 @@ async function checkPageNumber() {
     btn2Ref.textContent = currentPage - 1;
     btn1Ref.textContent = currentPage - 2;
   }
+    if (currentPage >= 998) {
+    // btn3Ref.hidden = true;
+    btn4Ref.hidden = true;
+
+  }
+  if (currentPage >= 1000) {
+    btn3Ref.hidden = true;
+    btn6Ref.hidden = true;
+    butPlus.hidden = true;
+  }
+
 }
 
 
