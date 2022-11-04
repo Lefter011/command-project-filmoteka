@@ -20,6 +20,5 @@ export function onWatchedClick(evt, arg) {
     localStore.save(WATCHED_KEY, savedMovies);
     watchedBtn.textContent = 'Remove from watched';
     watchedBtn.style.width = 'fit-content';
-    watchedBtn.style.height = 'auto';
   }
 }
