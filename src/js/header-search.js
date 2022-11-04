@@ -9,9 +9,10 @@ import ApiService from './ApiService';
 import { getGenresName } from './utils/get-genres-name';
 import { sliceGenres } from './utils/slice-genres';
 import { addBackToTop } from 'vanilla-back-to-top';
+import { callback, options, io } from './pagination/io';
 
 const api = new ApiService();
-
+let queryPage = 1;
 searchFormRef.addEventListener('submit', onSubmit);
 
 export async function onSubmit(event, page) {
@@ -25,9 +26,31 @@ export async function onSubmit(event, page) {
     return;
   }
   api.query = searchQuery;
-  const paginContainer = document.querySelector('.pagination-container');
-  console.log('paginContainer', paginContainer);
-  paginContainer.classList.add('visually-hidden');
+  // paginContainer.hidden = true;
+  const options = {
+    root: null,
+    rootMargin: '100px',
+    threshold: 1.0,
+  };
+
+  const io = new IntersectionObserver(async (entries, io) => {
+    entries.forEach(async entry => {
+      if (entry.isIntersecting) {
+        console.log('YEEEY');
+        incrementPage();
+          const data = await api.getMoviesByName(searchQuery, queryPage);
+          console.log('io   results', data);
+          console.log('callback   searchQuery', searchQuery);
+          const markup = createMarkup(data);
+          containerGallery.insertAdjacentHTML('beforeend', markup);
+      }
+    });
+  }, options);
+
+  const target = document.querySelector('.pagination-container');
+  io.observe(target);
+  console.log('onSubmit   observer', io);
+  console.log('onSubmit   observerTarget', target);
 
   const data = await api.getMoviesByName(searchQuery, page);
   localStorage.setItem('query', JSON.stringify(data));
@@ -84,3 +107,7 @@ addBackToTop({
   backgroundColor: 'transparent',
   textColor: '#e5882c',
 });
+
+function incrementPage() {
+  return (queryPage += 1);
+}
