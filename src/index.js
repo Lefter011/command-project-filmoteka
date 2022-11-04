@@ -1,9 +1,10 @@
 import './js/header-search';
 import './js/hero';
 import './js/utils/set-genres-to-localstorage';
+import './js/new-team-modal';
 
 import './js/theme';
-import './js/footer_modal';
+// import './js/footer_modal';
 
 import './js/utils/loc-storage';
 
