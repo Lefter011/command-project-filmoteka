@@ -4,6 +4,7 @@ import { checkSavedFilms } from './check-saved-films';
 export const LINE_KEY = `queue`;
 const myLibrary = document.querySelector('.mylibrary');
 
+
 export function onQueueClick(evt, arg) {
   evt.preventDefault();
   const queueBtn = document.querySelector('button[data-modal-queue]');
@@ -15,7 +16,7 @@ export function onQueueClick(evt, arg) {
     console.log('onQueueClick   deleted', deleted)
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Add to queue';
-    if (savedMovies.length === 0) {
+    if (savedMovies.length === 0 & !myLibrary) {
       myLibrary.style.height = '100vh';
     }
   } else {
