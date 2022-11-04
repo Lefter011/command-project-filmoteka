@@ -25,6 +25,9 @@ export async function onSubmit(event, page) {
     return;
   }
   api.query = searchQuery;
+  const paginContainer = document.querySelector('.pagination-container');
+  console.log('paginContainer', paginContainer);
+  paginContainer.classList.add('visually-hidden');
 
   const data = await api.getMoviesByName(searchQuery, page);
   localStorage.setItem('query', JSON.stringify(data));
