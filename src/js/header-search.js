@@ -36,11 +36,8 @@ export async function onSubmit(event, page) {
   const io = new IntersectionObserver(async (entries, io) => {
     entries.forEach(async entry => {
       if (entry.isIntersecting) {
-        console.log('YEEEY');
         incrementPage();
         const data = await api.getMoviesByName(searchQuery, queryPage);
-        console.log('io   results', data);
-        console.log('callback   searchQuery', searchQuery);
         const markup = createMarkup(data);
         containerGallery.insertAdjacentHTML('beforeend', markup);
       }
