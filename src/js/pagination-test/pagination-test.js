@@ -25,11 +25,12 @@ btn4Ref.addEventListener('click', clickToPage4);
 btn5Ref.addEventListener('click', clickToPage5);
 btn6Ref.addEventListener('click', clickToPage6);
 
-const res = localStorage.getItem('query');
-const arrayEl = JSON.parse(res);
-const totalPage = arrayEl.total_pages;
-console.log(totalPage);
+// const res = localStorage.getItem('query');
+// const arrayEl = JSON.parse(res);
+// const totalPage = arrayEl.total_pages;
+// console.log(totalPage);
 
+btn1Ref.hidden = true;
 btn2Ref.hidden = true;
 btn3Ref.textContent = 2;
 btn4Ref.textContent = 3;
@@ -97,7 +98,7 @@ async function renderPage() {
     const markup = createMarkup(data);
     clearMarkup();
     containerGallery.innerHTML = markup;
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     document.getElementById('currentPage').textContent = currentPage;
   } catch (error) {
     console.error('Error with search fetch' + error);
