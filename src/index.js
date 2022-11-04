@@ -18,4 +18,4 @@ import './js/modal-card-film/check-saved-films';
 
 import './js/pagination/pagination';
 import './js/pagination/pagin-search';
-
+import './js//pagination/io';

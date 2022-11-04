@@ -41,7 +41,7 @@ btn6Ref.textContent = 1000;
 
 let currentPage = 1;
 
-async function onButtonClickPlus() {
+export async function onButtonClickPlus() {
   currentPage += 1;
   renderPage();
   checkPageNumber();
