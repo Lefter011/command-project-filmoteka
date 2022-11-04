@@ -31,7 +31,14 @@
 .mylibrary-header__logo-img{
     width: 24px;
     height: 24px;
-    
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        
+    &:hover,
+    &:focus {
+        transform: rotate(360deg);
+    }
 }
 
 .mylibrary-header__text-link{
@@ -45,6 +52,14 @@
             font-size: 30px;
             line-height: 1.17;
             color: #ffffff;
+            transition-property: transform;
+            transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    
+            &:hover,
+            &:focus {
+                transform: skewX(-15deg);
+            }
     }
 }
 
@@ -77,6 +92,14 @@
 
 .filmoteka__navigation-item {
     position: relative;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        
+    &:hover,
+    &:focus {
+        transform: skewX(-15deg);
+    }
 }
 
 .filmoteka__navigation-item:not(:last-child){

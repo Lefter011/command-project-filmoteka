@@ -1,11 +1,12 @@
-import { getGenresName } from "./utils/get-genres-name";
-import { sliceGenres } from "./utils/slice-genres";
+import { getGenresName } from './utils/get-genres-name';
+import { sliceGenres } from './utils/slice-genres';
+import { addBackToTop } from 'vanilla-back-to-top';
 
-const queueBTN = document.querySelector('.queue-btn');
+export const queueBTN = document.querySelector('.queue-btn');
 const watchedBTN = document.querySelector('.watched-btn');
 const myLibraryList = document.querySelector('.mylibrary__list');
 const myLibrary = document.querySelector('.mylibrary');
-const messageWithoutMovies = document.querySelector(".no-list")
+const messageWithoutMovies = document.querySelector('.no-list');
 
 function onLoadPage() {
   clearPage();
@@ -42,13 +43,13 @@ queueBTN.addEventListener('click', onQueueClick);
 
 onLoadPage();
 
-function clearPage() {
+export function clearPage() {
   myLibraryList.innerHTML = '';
 }
 
-function createMarkupWatched() {
+export function createMarkupWatched() {
   const watchedMovies = JSON.parse(localStorage.getItem('watched'));
-    if (!watchedMovies) {
+  if (!watchedMovies || watchedMovies.length === 0) {
     myLibraryList.classList.add('visually-hidden');
     messageWithoutMovies.classList.remove('visually-hidden');
     myLibrary.style.height = '100vh';
@@ -72,7 +73,7 @@ function createMarkupWatched() {
         const vote = Number(vote_average).toFixed(1);
         // const genres = getGenresName(genre_ids);
         const genresArr = [];
-        genres.map(genre => genresArr.push(genre.name))
+        genres.map(genre => genresArr.push(genre.name));
         const slicedGenres = sliceGenres(genresArr);
         const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
         let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
@@ -103,9 +104,9 @@ function createMarkupWatched() {
     .join('');
 }
 
-function createMarkupQueue() {
+export function createMarkupQueue() {
   const queueMovies = JSON.parse(localStorage.getItem('queue'));
-  if (!queueMovies) {
+  if (!queueMovies || queueMovies.length === 0) {
     myLibraryList.classList.add('visually-hidden');
     messageWithoutMovies.classList.remove('visually-hidden');
     myLibrary.style.height = '100vh';
@@ -115,8 +116,16 @@ function createMarkupQueue() {
     myLibraryList.classList.remove('visually-hidden');
     messageWithoutMovies.classList.add('visually-hidden');
   }
-  
-  return queueMovies
+  if (queueMovies.length > 9) {
+    cutMovies = queueMovies.slice(0, 9);
+    createLibraryMarkup(cutMovies);
+    return;
+  }
+  return createLibraryMarkup(queueMovies);
+}
+
+export function createLibraryMarkup(movies) {
+  return movies
     .map(
       ({
         poster_path,
@@ -130,7 +139,7 @@ function createMarkupQueue() {
         const vote = Number(vote_average).toFixed(1);
         // const genres = getGenresName(genre_ids);
         const genresArr = [];
-        genres.map(genre => genresArr.push(genre.name))
+        genres.map(genre => genresArr.push(genre.name));
         const slicedGenres = sliceGenres(genresArr);
         const BASE_PICTURE_URL = 'https://image.tmdb.org/t/p/original';
         let posterLink = `${BASE_PICTURE_URL}${poster_path}`;
@@ -160,3 +169,9 @@ function createMarkupQueue() {
     )
     .join('');
 }
+
+addBackToTop({
+  diameter: 45,
+  backgroundColor: 'transparent',
+  textColor: '#e5882c',
+});
