@@ -5,6 +5,15 @@ import { localStore } from '../utils/loc-storage';
 import { checkSavedFilms, checkWatchedFilms } from './check-saved-films';
 import ApiService from '../ApiService';
 import { createModalCardMarkup, addMarkupToCard } from './render-film';
+
+import { createTrailerBtnMurkup } from './trailer';
+import { addTrailerMarkup } from './trailer';
+import { creatTrailerLink } from './trailer';
+// import { openTrailer } from './trailer';
+
+// import * as basicLightbox from 'basiclightbox';
+// import 'basiclightbox/dist/basicLightbox.min.css';
+
 if (refs.home) {
   refs.home.addEventListener('click', onFilmCardClick);
 }
@@ -35,10 +44,21 @@ export async function onFilmCardClick(evt) {
   const markupDone = createModalCardMarkup(movie);
   addMarkupToCard(markupDone);
   saveKeysToStorage();
+  const fetchTrailer = await api
+    .fetchTrailer(filmId)
+    .then(res => {
+      return res;
+    })
+    .catch(console.error());
+  const trailerBtnMurkup = createTrailerBtnMurkup(fetchTrailer);
+  addTrailerMarkup(trailerBtnMurkup)
   const queueBtn = document.querySelector('button[data-modal-queue]');
   const watchedBtn = document.querySelector('button[data-modal-watched]');
+  const trailerBtn = document.querySelector('button[data-modal-watched]');
   const savedQueue = checkSavedFilms(movie);
   const savedWatched = checkWatchedFilms(movie);
+
+  // trailerBtn.addEventListener('click', openTrailer)
 
   if (savedQueue) {
     queueBtn.textContent = 'Remove from queue';
@@ -51,7 +71,11 @@ export async function onFilmCardClick(evt) {
 
   queueBtn.addEventListener('click', evt => onQueueClick(evt, movie));
   watchedBtn.addEventListener('click', evt => onWatchedClick(evt, movie));
+  
 }
+
+
+
 
 export function onCloseBtnClick() {
   refs.backdrop.classList.add('is-hidden');
