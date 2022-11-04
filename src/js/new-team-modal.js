@@ -28,6 +28,7 @@ const refs = {
       refs.teamModal.classList.add('visually-hidden');
       refs.memberCard.innerHTML = '';
       refs.title.classList.remove('visually-hidden');
+      refs.body.classList.toggle('no-scroll');
     }
   }
 
