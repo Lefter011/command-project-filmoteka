@@ -5,7 +5,7 @@ import { sliceGenres } from './slice-genres';
 export function createMarkup(movies) {
   return movies
     .map(({ id, genre_ids, title, poster_path, release_date }) => {
-      const releaseYear = release_date.substring(0, 4);
+      const releaseYear = new Date(release_date);
       const genres = getGenresName(genre_ids);
       const slicedGenres = sliceGenres(genres);
       let posterLink = `${urls.BASE_IMAGE_URL}${poster_path}`;
@@ -24,7 +24,7 @@ export function createMarkup(movies) {
     <h2 class="card__name">${title}</h2>
     <div class="card__info">
       <p class="card__genres">${slicedGenres.join(', ')}</span></p>
-      <p class="card__year">${releaseYear}</p>
+      <p class="card__year">${releaseYear.getFullYear()}</p>
     </div>
   </div>
 </li>`;

@@ -32,9 +32,9 @@ export default class ApiService {
   }
 
   async fetchTrailer(id) {
-    const url = `${urls.BASE_URL}${urls.GET_MOVIE_DETAILS_PATH_URL}${id}/videos?api_key=${API_KEY}`
+    const url = `${urls.BASE_URL}${urls.GET_MOVIE_DETAILS_PATH_URL}${id}/videos?api_key=${API_KEY}`;
     try {
-      const {data} = await axios.get(url)
+      const { data } = await axios.get(url);
       return data;
     } catch (error) {
       console.error(error);
