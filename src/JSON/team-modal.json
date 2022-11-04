@@ -3,54 +3,42 @@
     "username": "Сергій Павлюченко",
     "role": "Developer",
     "image": "https://i.ibb.co/YyF27L5/img-team-sergiy.png",
-    "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
+    "github": "https://github.com/SergeyPavluchenko",
     "id": "1"
   },
   {
     "username": "Ярослава Воробець",
     "role": "Developer",
     "image": "https://i.ibb.co/g6XD07R/img-team-yaroslava.png",
-    "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
+    "github": "https://github.com/Yaroslava-Vorobets",
     "id": "2"
   },
   {
     "username": "Андрій Уткін",
     "role": "Developer",
     "image": "https://i.ibb.co/Gtz0Lx4/img-team-andriy.png",
-    "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
+    "github": "https://github.com/AndreyNik2",
     "id": "3"
   },
   {
     "username": "Катерина Дзюбчук",
     "role": "Developer",
     "image": "https://i.ibb.co/TPzRdYm/img-team-katya.png",
-    "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
+    "github": "https://github.com/Kate-Kitkat19",
     "id": "4"
   },
   {
     "username": "Юлія Пархоменко",
     "role": "Developer",
     "image": "https://i.ibb.co/h7pLcGg/img-team-julia.png",
-    "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
+    "github": "https://github.com/lady-araminta",
     "id": "5"
   },
   {
     "username": "Швець Вікторія",
     "role": "Developer",
     "image": "https://i.ibb.co/3RbrM2N/img-team-viktoria.png",
-    "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
+    "github": "https://github.com/BondarViktoriia",
     "id": "6"
   },
   {
@@ -58,17 +46,13 @@
     "role": "Team lead",
     "image": "https://i.ibb.co/bXdSxKH/img-team-misha.png",
     "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
     "id": "7"
   },
   {
     "username": "Уляна Колеснікова",
     "role": "Scrum master",
     "image": "https://i.ibb.co/wLmpFPy/img-team-ulyana.png",
-    "github": "https://github.com/Lefter011",
-    "linkedin": "#",
-    "facebook": "#",
+    "github": "https://github.com/Anakole",
     "id": "8"
   }
 ]

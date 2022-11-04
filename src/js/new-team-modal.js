@@ -68,34 +68,22 @@ function createTeamMarkup(team) {
 }
 
 function createCentralCardMarkup(member) {
-  const { username, role, image, github, linkedin, facebook, id } = member;
-  return `<div class="footer__member-wrap" data-id=${id}>
+  const { username, role, image, github, id } = member;
+  return `<div class="footer__member-wrap" data-id="${id}">
   <img src="${image}" alt="image of a member" class="footer__member-img" />
-  <p class="footer__member-name">${username}</p>
-  <p class="footer__member-role">${role}</p>
-  <ul class="footer__soc-list">
-    <li class="footer__soc-item">
-      <a href="${github}" class="footer__soc-link">
-        <svg>
-          <use href="./image/soc-icons.svg#icon-github"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="footer__soc-item">
-      <a href="${linkedin}" class="footer__soc-link">
-        <svg>
-          <use href="./image/soc-icons.svg#icon-linkedin2"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="footer__soc-item">
-      <a href="${facebook}" class="footer__soc-link">
-        <svg>
-          <use href="./image/soc-icons.svg#icon-facebook"></use>
-        </svg>
-      </a>
-    </li>
-  </ul>
+  <a href="${github}" class="footer__member-link">
+    <div class="footer_member-text">
+      <p class="footer__member-name">${username}</p>
+      <p class="footer__member-role">${role}</p>
+    </div>
+    <img
+      class="footer__member-logo"
+      src="https://i.ibb.co/SnqVKhk/Git-Hub-Mark-32px.png"
+      alt="Git-Hub-Mark-32px"
+      border="0"
+    />
+  </a>
 </div>`;
 }
+
 ///////////////////////////////////////
