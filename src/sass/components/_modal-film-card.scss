@@ -94,6 +94,8 @@
 }
 .modal__buttons {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .img-thumb {
@@ -148,9 +150,7 @@
   @include default-transition(box-shadow);
   @include default-transition(background-color);
 
-  &:first-child {
-    margin-right: 15px;
-  }
+  
   &:hover,
   &:focus {
     background-color: #ff6b01;
