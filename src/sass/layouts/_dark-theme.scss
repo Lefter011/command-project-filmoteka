@@ -41,7 +41,11 @@
                     background-color: var(--accent);
                     color: var(--dots-color);
                 }
-        
+                .footer-rights__text,
+                .footer-rights__divider,
+                .footer-rights__link{
+                    color:var(--white)
+                }
 }
 
 .grey-background-theme {
