@@ -113,7 +113,9 @@ async function renderPage() {
       const data = res.results;
       const markup = createMarkup(data);
       clearMarkup();
+      btn6Ref.hidden = true;
       containerGallery.innerHTML = markup;
+      
     } else {
       const res = await api.fetchTrendingMovies(currentPage);
       const data = res.data.results;
@@ -122,7 +124,7 @@ async function renderPage() {
       containerGallery.innerHTML = markup;
     }
 
-    // // window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     document.getElementById('currentPage').textContent = currentPage;
   } catch (error) {
     console.error('Error with search fetch' + error);
