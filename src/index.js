@@ -4,8 +4,6 @@ import './js/utils/set-genres-to-localstorage';
 import './js/new-team-modal';
 
 import './js/theme';
-// import './js/footer_modal';
-
 import './js/utils/loc-storage';
 
 import './js/modal-card-film/modal-refs';

@@ -25,11 +25,6 @@ btn4Ref.addEventListener('click', clickToPage4);
 btn5Ref.addEventListener('click', clickToPage5);
 btn6Ref.addEventListener('click', clickToPage6);
 
-// const res = localStorage.getItem('query');
-// const arrayEl = JSON.parse(res);
-// const totalPage = arrayEl.total_pages;
-// console.log(totalPage);
-
 btn1Ref.hidden = true;
 btn2Ref.hidden = true;
 btn5Ref.hidden = true;
