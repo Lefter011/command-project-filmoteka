@@ -1,244 +1,236 @@
 .footer {
-    padding-top: 30px;
-    padding-bottom: 25px;
-    background-color: var(--secondary-background-color);
-    margin-top: auto;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  background-color: var(--secondary-background-color);
+  margin-top: auto;
 }
 
 .footer-rights {
-    flex-direction: column;
+  flex-direction: column;
 
-    @media screen and (min-width: 768px) {
-        & {
-            flex-direction: row;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  @media screen and (min-width: 768px) {
+    & {
+      flex-direction: row;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
+  }
 }
 
 .footer-rights__reserved {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 
-    @media screen and (min-width: 768px) {
-        & {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 0;
-        }
+  @media screen and (min-width: 768px) {
+    & {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 0;
     }
-
+  }
 }
 
 .footer-rights__text,
 .footer-rights__divider,
 .footer-rights__link {
-    color: var(--secondary);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: center;
+  color: var(--secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
-
-    .footer-rights__text,
-    .footer-rights__divider,
-    .footer-rights__link {
-        font-size: 16px;
-    }
+  .footer-rights__text,
+  .footer-rights__divider,
+  .footer-rights__link {
+    font-size: 16px;
+  }
 }
 
 .footer-rights__divider {
-    margin-right: 3px;
-    margin-left: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 .footer-rights__copy {
-    margin-right: 7px;
+  margin-right: 7px;
 }
 
 .heart-icon {
-    margin-right: 10px;
-    margin-left: 10px;
-    fill: var(--accent);
+  margin-right: 10px;
+  margin-left: 10px;
+  fill: var(--accent);
 }
 
 .footer-rights__students {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    @media screen and (min-width: 480px) {
-        & {
-            display: flex;
-            align-items: center;
-        }
+  @media screen and (min-width: 480px) {
+    & {
+      display: flex;
+      align-items: center;
     }
-
+  }
 }
 
 .footer-rights__link {
-    // border-bottom: 1px solid var(--secondary);
-    text-decoration:underline
+  // border-bottom: 1px solid var(--secondary);
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .footer-backdrop {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    opacity: 1;
-    background-color: var(--backdrop-color);
-    transition: opacity, visibility;
-    transition-duration: 250ms, 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 1;
+  background-color: var(--backdrop-color);
+  transition: opacity, visibility;
+  transition-duration: 250ms, 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-backdrop.visually-hidden .footer__modal {
-    transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
 }
 
 .footer__modal {
-    padding: 40px;
-    position: fixed;
-    z-index: 1;
-    max-height: 100vh;
-    width: 80%;
-    overflow-y: auto;
-    background-color: var(--secondary-background-color);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform;
-    transition-duration: 350ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+  padding: 40px;
+  position: fixed;
+  z-index: 1;
+  max-height: 100vh;
+  width: 80%;
+  overflow-y: auto;
+  background-color: var(--secondary-background-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
-    @media screen and (min-width: 480px) {
-        & {
-            width: 70%;
-        }
+  @media screen and (min-width: 480px) {
+    & {
+      width: 70%;
     }
+  }
 
-    @media screen and (min-width: 768px) {
-        & {
-            width: 60%;
-        }
+  @media screen and (min-width: 768px) {
+    & {
+      width: 60%;
     }
-
+  }
 }
 
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .footer__modal-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    stroke-width: 0;
-    stroke: currentColor;
-    background-color: transparent;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__modal-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    fill: var(--theme-icon);
-    transition: fill;
-    transition-duration: 350ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--theme-icon);
+  transition: fill;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover,
-    &:focus {
-        fill: var(--table-color);
-    }
+  &:hover,
+  &:focus {
+    fill: var(--table-color);
+  }
 }
 
-
 .footer__modal-text {
-    display: flex;
-    text-transform: uppercase;
-    justify-content: center;
-    font-size: 33px;
-    font-weight: 900;
-    margin-bottom: 20px;
-    letter-spacing: 0.02em;
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+  font-size: 33px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
 
-    @media screen and (min-width: 480px) {
-        & {
-            font-size: 35px;
-        }
+  @media screen and (min-width: 480px) {
+    & {
+      font-size: 35px;
     }
-
+  }
 }
 
 .footer__modal-wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 
-    @media screen and (min-width: 768px) {
-        & {
-            display: flex;
-            justify-content: space-around;
-        }
+  @media screen and (min-width: 768px) {
+    & {
+      display: flex;
+      justify-content: space-around;
     }
+  }
 }
 
 .footer__modal-teem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .footer__modal-author {
-    margin-right: 20px;
+  margin-right: 20px;
 
-    @media screen and (min-width: 480px) {
-        & {
-            margin-right: 40px;
-        }
+  @media screen and (min-width: 480px) {
+    & {
+      margin-right: 40px;
     }
+  }
 
-    @media screen and (min-width: 768px) {
-        & {
-            margin-right: 30px;
-        }
+  @media screen and (min-width: 768px) {
+    & {
+      margin-right: 30px;
     }
-
+  }
 }
 
 .footer__modal-circle {
-    color: var(--theme-icony);
+  color: var(--theme-icony);
 }
 
 .footer__modal-name {
-    color: var(--main-text);
+  color: var(--main-text);
 
-    @media screen and (min-width: 480px) {
-        & {
-            font-size: 18px;
-        }
+  @media screen and (min-width: 480px) {
+    & {
+      font-size: 18px;
     }
-
+  }
 }
 
 .footer__modal-role {
-    color: var(--main-text);
+  color: var(--main-text);
 }
