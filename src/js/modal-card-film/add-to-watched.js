@@ -16,7 +16,8 @@ export function onWatchedClick(evt, arg) {
     console.log('onWatchedClick   deleted', deleted);
     localStore.save(WATCHED_KEY, savedMovies);
     watchedBtn.textContent = 'Add to watched';
-    if (savedMovies.length === 0 & myLibrary) {
+    console.log(savedMovies);
+    if (savedMovies.length === 0) {
       myLibrary.style.height = '100vh';
     }
   } else {
