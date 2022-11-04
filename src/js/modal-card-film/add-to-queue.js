@@ -15,7 +15,7 @@ export function onQueueClick(evt, arg) {
     const deleted = savedMovies.splice(index, 1);
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Add to queue';
-    if (savedMovies.length === 0) {
+    if (savedMovies.length === 0 & myLibrary) {
       myLibrary.style.height = '100vh';
     }
   } else {
