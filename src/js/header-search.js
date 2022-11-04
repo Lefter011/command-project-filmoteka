@@ -45,7 +45,7 @@ export function createMarkup(data) {
   const { results } = data;
   return results
     .map(({ poster_path, original_title, genre_ids, release_date, id }) => {
-      const releaseYear = release_date.substring(0, 4);
+      const releaseYear = new Date(release_date);
       const genres = getGenresName(genre_ids);
       const slicedGenres = sliceGenres(genres);
       let posterLink = `${urls.BASE_IMAGE_URL}${poster_path}`;
@@ -64,7 +64,7 @@ export function createMarkup(data) {
     <h2 class="card__name">${original_title}</h2>
     <div class="card__info">
       <p class="card__genres">${slicedGenres.join(', ')}</p>
-      <p class="card__year">${releaseYear}</p>
+      <p class="card__year">${releaseYear.getFullYear()}</p>
     </div>
   </div>
 </li>`;
