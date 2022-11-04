@@ -3,6 +3,8 @@ import { containerGallery, inputRef } from '../utils/refs';
 import { createMarkup } from '../utils/createMarkup';
 import { clearMarkup } from '../header-search';
 
+
+
 const api = new ApiService();
 
 const butPlus = document.querySelector('.button2');
@@ -116,6 +118,8 @@ async function renderPage() {
       btn6Ref.hidden = true;
       containerGallery.innerHTML = markup;
       
+
+
     } else {
       const res = await api.fetchTrendingMovies(currentPage);
       const data = res.data.results;
@@ -171,5 +175,6 @@ async function checkPageNumber() {
     butPlus.hidden = true;
   }
 }
+
 
 export { currentPage };
