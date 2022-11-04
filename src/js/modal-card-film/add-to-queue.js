@@ -19,6 +19,5 @@ export function onQueueClick(evt, arg) {
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Remove from queue';
     queueBtn.style.width = 'fit-content';
-    queueBtn.style.height = 'auto';
   }
 }

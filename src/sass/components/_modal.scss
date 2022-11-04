@@ -94,6 +94,10 @@
 }
 .modal__buttons {
   display: flex;
+  justify-content: center;
+  @include mq(tablet) {
+    justify-content: flex-start;
+  }
 }
 
 .img-thumb {
