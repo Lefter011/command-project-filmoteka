@@ -38,19 +38,19 @@ export async function onSubmit(event, page) {
       if (entry.isIntersecting) {
         console.log('YEEEY');
         incrementPage();
-          const data = await api.getMoviesByName(searchQuery, queryPage);
-          console.log('io   results', data);
-          console.log('callback   searchQuery', searchQuery);
-          const markup = createMarkup(data);
-          containerGallery.insertAdjacentHTML('beforeend', markup);
+        const data = await api.getMoviesByName(searchQuery, queryPage);
+        console.log('io   results', data);
+        console.log('callback   searchQuery', searchQuery);
+        const markup = createMarkup(data);
+        containerGallery.insertAdjacentHTML('beforeend', markup);
       }
     });
   }, options);
 
   const target = document.querySelector('.pagination-container');
   io.observe(target);
-  console.log('onSubmit   observer', io);
-  console.log('onSubmit   observerTarget', target);
+  target.style.opacity = '0';
+  target.style.pointerEvents = 'none';
 
   const data = await api.getMoviesByName(searchQuery, page);
   localStorage.setItem('query', JSON.stringify(data));
