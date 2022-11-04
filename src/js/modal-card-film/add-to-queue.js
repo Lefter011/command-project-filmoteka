@@ -17,7 +17,10 @@ export function onQueueClick(evt, arg) {
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Add to queue';
     if (savedMovies.length === 0) {
-      myLibrary.style.height = '100vh';
+      if (myLibrary) {
+        myLibrary.style.height = '100vh';
+      }
+      
     }
   } else {
     savedMovies.unshift(arg);

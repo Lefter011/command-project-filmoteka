@@ -18,7 +18,10 @@ export function onWatchedClick(evt, arg) {
     watchedBtn.textContent = 'Add to watched';
     console.log(savedMovies);
     if (savedMovies.length === 0) {
-      myLibrary.style.height = '100vh';
+      if (myLibrary) {
+        myLibrary.style.height = '100vh';
+      }
+      
     }
   } else {
     savedMovies.unshift(arg);
