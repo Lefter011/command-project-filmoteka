@@ -4,7 +4,7 @@ export function sliceGenres(genres) {
         
         return genres
     } else {
-        return [...genres.slice(0, 3), "Other"];
+        return [...genres.slice(0, 2), "Other"];
         
     }
 };

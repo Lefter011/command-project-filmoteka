@@ -1,135 +1,121 @@
-import { homePage } from '../hero';
 import ApiService from '../ApiService';
-import { containerGallery, inputRef } from '../utils/refs';
-import { searchMovies } from './pagin-search';
+import { containerGallery } from '../utils/refs';
 import { createMarkup } from '../utils/createMarkup';
 import { clearMarkup } from '../header-search';
 
 const api = new ApiService();
+
+const butPlus = document.querySelector('.button2');
+const butMinus = document.querySelector('.button1');
+
+butPlus.addEventListener('click', onButtonClickPlus);
+butMinus.addEventListener('click', onButtonClickMinus);
 
 const btn1Ref = document.querySelector('[data-index="1"]');
 const btn2Ref = document.querySelector('[data-index="2"]');
 const btn3Ref = document.querySelector('[data-index="3"]');
 const btn4Ref = document.querySelector('[data-index="4"]');
 const btn5Ref = document.querySelector('[data-index="5"]');
-const firstPageRef = document.querySelector('.first-button');
-const lastPageRef = document.querySelector('.last-button');
-const paginationRef = document.querySelector('.pagination-container');
-const rightArrowRef = document.querySelector('.arrow-right');
-const leftArrowRef = document.querySelector('.arrow-left');
-const prevDotsRef = document.querySelector('#previous');
-const afterDotsRef = document.querySelector('#after');
+const btn6Ref = document.querySelector('[data-index="6"]');
 
-paginationRef.addEventListener('click', onPaginationClick);
+btn1Ref.addEventListener('click', clickToPage1);
+btn2Ref.addEventListener('click', clickToPage2);
+btn3Ref.addEventListener('click', clickToPage3);
+btn4Ref.addEventListener('click', clickToPage4);
+btn5Ref.addEventListener('click', clickToPage5);
+btn6Ref.addEventListener('click', clickToPage6);
+
+// const res = localStorage.getItem('query');
+// const arrayEl = JSON.parse(res);
+// const totalPage = arrayEl.total_pages;
+// console.log(totalPage);
+
+btn1Ref.hidden = true;
+btn2Ref.hidden = true;
+btn3Ref.textContent = 2;
+btn4Ref.textContent = 3;
+btn5Ref.textContent = 1;
+btn6Ref.textContent = 1000;
 
 let currentPage = 1;
 
-let btns = document.querySelectorAll('.pagination-button');
+async function onButtonClickPlus() {
+  currentPage += 1;
+  renderPage();
+  checkPageNumber();
+}
 
-
-prevDotsRef.hidden = true;
-leftArrowRef.hidden = true;
-firstPageRef.hidden = true;
-
-function onPaginationClick(event) {
-  if (event.target.tagName === 'BUTTON') {
-    if (Number(event.target.textContent)) {
-      currentPage = Number(event.target.textContent);
-    }
-
-    prevDotsRef.hidden = true;
-    afterDotsRef.hidden = true;
-
-    if (event.target.classList.contains('pagination-button')) {
-      btns.forEach(el => el.classList.remove('pagination--current'));
-      event.target.classList.add('pagination--current');
-    }
-
-    if (event.target.classList.contains('arrow-right') && currentPage < 1000) {
-      btns.forEach(el => el.classList.remove('pagination--current'));
-      btn1Ref.classList.add('pagination--current');
-      btn1Ref.textContent = Number(btn1Ref.textContent) + 5;
-      btn2Ref.textContent = Number(btn2Ref.textContent) + 5;
-      btn3Ref.textContent = Number(btn3Ref.textContent) + 5;
-      btn4Ref.textContent = Number(btn4Ref.textContent) + 5;
-      btn5Ref.textContent = Number(btn5Ref.textContent) + 5;
-      currentPage = btn1Ref.textContent;
-    }
-
-    if (event.target.classList.contains('arrow-left') && currentPage >= 5) {
-      btns.forEach(el => el.classList.remove('pagination--current'));
-      btn1Ref.textContent = Number(btn1Ref.textContent) - 5;
-      btn2Ref.textContent = Number(btn2Ref.textContent) - 5;
-      btn3Ref.textContent = Number(btn3Ref.textContent) - 5;
-      btn4Ref.textContent = Number(btn4Ref.textContent) - 5;
-      btn5Ref.textContent = Number(btn5Ref.textContent) - 5;
-      btn5Ref.classList.add('pagination--current');
-      currentPage = btn5Ref.textContent;
-    }
-
-    if (event.target.classList.contains('first-button')) {
-      btns.forEach(el => el.classList.remove('pagination--current'));
-      btn1Ref.textContent = 1;
-      btn2Ref.textContent = 2;
-      btn3Ref.textContent = 3;
-      btn4Ref.textContent = 4;
-      btn5Ref.textContent = 5;
-      btn1Ref.classList.add('pagination--current');
-      currentPage = btn1Ref.textContent;
-      leftArrowRef.hidden = true;
-      prevDotsRef.hidden = true;
-      firstPageRef.hidden = true;
-    }
-
-    if (event.target.classList.contains('last-button')) {
-      btns.forEach(el => el.classList.remove('pagination--current'));
-      btn1Ref.textContent = Number(lastPageRef.textContent) - 4;
-      btn2Ref.textContent = Number(lastPageRef.textContent) - 3;
-      btn3Ref.textContent = Number(lastPageRef.textContent) - 2;
-      btn4Ref.textContent = Number(lastPageRef.textContent) - 1;
-      btn5Ref.textContent = lastPageRef.textContent;
-      btn5Ref.classList.add('pagination--current');
-      currentPage = btn5Ref.textContent;
-      rightArrowRef.hidden = true;
-      afterDotsRef.hidden = true;
-      lastPageRef.hidden = true;
-    }
-
-    if (Number(currentPage) > 5) {
-      leftArrowRef.hidden = false;
-      prevDotsRef.hidden = false;
-      firstPageRef.hidden = false;
-    } else {
-      leftArrowRef.hidden = true;
-      prevDotsRef.hidden = true;
-      firstPageRef.hidden = true;
-    }
-
-    if (Number(currentPage) < 996) {
-      rightArrowRef.hidden = false;
-      afterDotsRef.hidden = false;
-      lastPageRef.hidden = false;
-    }
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    if (inputRef.value !== '') {
-      searchMovies(inputRef.value, currentPage);
-    } else {
-      trendingMoviesPagFetch(currentPage);
-    }
+async function onButtonClickMinus() {
+  if (currentPage != 1) {
+    currentPage -= 1;
+    renderPage();
+    checkPageNumber();
+  } else {
+    return console.log('error');
   }
 }
 
-async function trendingMoviesPagFetch(page) {
+async function clickToPage1() {
+  currentPage = Number(document.querySelector('[data-index="1"]').textContent);
+  checkPageNumber();
+  return renderPage();
+}
+
+async function clickToPage2() {
+  currentPage = Number(document.querySelector('[data-index="2"]').textContent);
+  checkPageNumber();
+  return renderPage();
+}
+
+async function clickToPage3() {
+  currentPage = Number(document.querySelector('[data-index="3"]').textContent);
+  checkPageNumber();
+  return renderPage();
+}
+
+async function clickToPage4() {
+  currentPage = Number(document.querySelector('[data-index="4"]').textContent);
+  checkPageNumber();
+  return renderPage();
+}
+
+async function clickToPage5() {
+  currentPage = 1;
+  checkPageNumber();
+  return renderPage();
+}
+
+async function clickToPage6() {
+  currentPage = 1;
+  checkPageNumber();
+  return renderPage();
+}
+
+async function renderPage() {
   try {
-    const res = await api.fetchTrendingMovies(page);
+    const res = await api.fetchTrendingMovies(currentPage);
     const data = res.data.results;
     const markup = createMarkup(data);
     clearMarkup();
     containerGallery.innerHTML = markup;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('currentPage').textContent = currentPage;
   } catch (error) {
     console.error('Error with search fetch' + error);
+  }
+}
+
+async function checkPageNumber() {
+  btn3Ref.textContent = currentPage + 1;
+  btn4Ref.textContent = currentPage + 2;
+  if (currentPage >= 3) {
+    btn1Ref.hidden = false;
+    btn2Ref.hidden = false;
+    btn1Ref.textContent = currentPage - 2;
+    btn2Ref.textContent = currentPage - 1;
+  } else {
+    btn1Ref.hidden = true;
+    btn2Ref.hidden = true;
   }
 }
 

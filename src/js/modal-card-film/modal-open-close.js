@@ -5,6 +5,7 @@ import { localStore } from '../utils/loc-storage';
 import { checkSavedFilms, checkWatchedFilms } from './check-saved-films';
 import ApiService from '../ApiService';
 import { createModalCardMarkup, addMarkupToCard } from './render-film';
+
 import { createTrailerBtnMurkup } from './trailer';
 import { addTrailerMarkup } from './trailer';
 import { creatTrailerLink } from './trailer';
@@ -12,9 +13,6 @@ import { creatTrailerLink } from './trailer';
 
 // import * as basicLightbox from 'basiclightbox';
 // import 'basiclightbox/dist/basicLightbox.min.css';
-
-
-
 
 if (refs.home) {
   refs.home.addEventListener('click', onFilmCardClick);
@@ -85,6 +83,10 @@ export function onCloseBtnClick() {
   refs.body.classList.remove('modal-shown');
   refs.body.removeEventListener('click', onBackdropClick);
   window.removeEventListener('keydown', onEscClick);
+  refs.containerForInfo.innerHTML = '';
+  if (document.querySelector('.mylibrary__list')) {
+    setTimeout(document.location.reload(), 0);
+  }
 }
 
 export function onBackdropClick(evt) {
