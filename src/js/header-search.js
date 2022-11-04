@@ -10,6 +10,7 @@ import { getGenresName } from './utils/get-genres-name';
 import { sliceGenres } from './utils/slice-genres';
 import { addBackToTop } from 'vanilla-back-to-top';
 
+
 const api = new ApiService();
 
 searchFormRef.addEventListener('submit', onSubmit);
@@ -87,3 +88,4 @@ addBackToTop({
   backgroundColor: 'transparent',
   textColor: '#e5882c',
 });
+
