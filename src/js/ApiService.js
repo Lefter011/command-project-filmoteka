@@ -31,6 +31,16 @@ export default class ApiService {
     this.#moviesByNameSearchParams.params.query = newQuery;
   }
 
+  async fetchTrailer(id) {
+    const url = `${urls.BASE_URL}${urls.GET_MOVIE_DETAILS_PATH_URL}${id}/videos?api_key=${API_KEY}`;
+    try {
+      const { data } = await axios.get(url);
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   async fetchGenres() {
     const url = urls.BASE_URL + urls.GENRES_PATH_URL;
     try {

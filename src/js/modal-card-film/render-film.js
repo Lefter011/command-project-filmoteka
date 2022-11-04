@@ -1,5 +1,4 @@
 import { refs } from './modal-refs';
-const Handlebars = require('handlebars');
 import { getGenresName } from '../utils/get-genres-name';
 import { sliceGenres } from '../utils/slice-genres';
 
