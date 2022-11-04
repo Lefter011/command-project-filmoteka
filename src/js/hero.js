@@ -1,7 +1,7 @@
 import ApiService from './ApiService';
 import { containerGallery } from './utils/refs';
 import { createMarkup } from './utils/createMarkup';
-import { currentPage } from './pagination-test/pagination-test';
+import { currentPage } from './pagination/pagination';
 
 const apiMovie = new ApiService();
 

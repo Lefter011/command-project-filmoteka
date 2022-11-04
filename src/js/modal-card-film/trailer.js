@@ -1,6 +1,4 @@
 import ApiService from "../ApiService";
-import * as basicLightbox from 'basiclightbox'
-import 'basiclightbox/dist/basicLightbox.min.css';
 import axios from "axios";
 
 const BaseYouTubeURL = 'https://www.youtube.com/embed/';

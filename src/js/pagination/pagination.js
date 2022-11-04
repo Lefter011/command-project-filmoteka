@@ -18,6 +18,8 @@ const btn4Ref = document.querySelector('[data-index="4"]');
 const btn5Ref = document.querySelector('[data-index="5"]');
 const btn6Ref = document.querySelector('[data-index="6"]');
 
+
+
 btn1Ref.addEventListener('click', clickToPage1);
 btn2Ref.addEventListener('click', clickToPage2);
 btn3Ref.addEventListener('click', clickToPage3);
@@ -32,12 +34,15 @@ btn6Ref.addEventListener('click', clickToPage6);
 
 btn1Ref.hidden = true;
 btn2Ref.hidden = true;
+btn5Ref.hidden = true;
+
 btn3Ref.textContent = 2;
 btn4Ref.textContent = 3;
 btn5Ref.textContent = 1;
 btn6Ref.textContent = 1000;
 
 let currentPage = 1;
+
 
 async function onButtonClickPlus() {
   currentPage += 1;
@@ -86,9 +91,15 @@ async function clickToPage5() {
 }
 
 async function clickToPage6() {
-  currentPage = 1;
+  currentPage = btn6Ref.textContent;
   checkPageNumber();
-  return renderPage();
+  renderPage();
+  if (currentPage >= 998) {
+    btn3Ref.hidden = true;
+    btn4Ref.hidden = true;
+    btn6Ref.hidden = true;
+    butPlus.hidden = true;
+  }
 }
 
 async function renderPage() {
@@ -98,7 +109,7 @@ async function renderPage() {
     const markup = createMarkup(data);
     clearMarkup();
     containerGallery.innerHTML = markup;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
     document.getElementById('currentPage').textContent = currentPage;
   } catch (error) {
     console.error('Error with search fetch' + error);
@@ -106,17 +117,35 @@ async function renderPage() {
 }
 
 async function checkPageNumber() {
-  btn3Ref.textContent = currentPage + 1;
-  btn4Ref.textContent = currentPage + 2;
-  if (currentPage >= 3) {
+  btn3Ref.textContent = Number(currentPage) + 1;
+  btn4Ref.textContent = Number(currentPage) + 2;
+
+  if (currentPage >= 3 && currentPage <= 997) {
     btn1Ref.hidden = false;
     btn2Ref.hidden = false;
-    btn1Ref.textContent = currentPage - 2;
+    btn5Ref.hidden = false;
+
     btn2Ref.textContent = currentPage - 1;
+    btn1Ref.textContent = currentPage - 2;
+
+    btn3Ref.hidden = false;
+    btn4Ref.hidden = false;
+    butPlus.hidden = false;
+    btn6Ref.hidden = false;
   } else {
     btn1Ref.hidden = true;
     btn2Ref.hidden = true;
+    btn5Ref.hidden = true;
+  }
+  
+  if (currentPage >= 998 && currentPage <= 1000) {
+    btn1Ref.hidden = false;
+    btn2Ref.hidden = false;
+    btn2Ref.textContent = currentPage - 1;
+    btn1Ref.textContent = currentPage - 2;
   }
 }
+
+
 
 export { currentPage };
