@@ -1,10 +1,9 @@
 import './js/header-search';
 import './js/hero';
 import './js/utils/set-genres-to-localstorage';
+import './js/new-team-modal';
 
 import './js/theme';
-import './js/footer_modal';
-
 import './js/utils/loc-storage';
 
 import './js/modal-card-film/modal-refs';
@@ -17,4 +16,4 @@ import './js/modal-card-film/check-saved-films';
 
 import './js/pagination/pagination';
 import './js/pagination/pagin-search';
-
+import './js//pagination/io';

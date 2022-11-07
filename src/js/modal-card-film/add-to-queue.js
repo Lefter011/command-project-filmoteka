@@ -13,14 +13,12 @@ export function onQueueClick(evt, arg) {
   if (isSaved) {
     const index = savedMovies.findIndex(movie => movie.id === isSaved.id);
     const deleted = savedMovies.splice(index, 1);
-    console.log('onQueueClick   deleted', deleted)
     localStore.save(LINE_KEY, savedMovies);
     queueBtn.textContent = 'Add to queue';
     if (savedMovies.length === 0) {
       if (myLibrary) {
         myLibrary.style.height = '100vh';
       }
-      
     }
   } else {
     savedMovies.unshift(arg);

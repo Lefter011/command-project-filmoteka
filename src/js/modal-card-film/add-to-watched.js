@@ -13,7 +13,6 @@ export function onWatchedClick(evt, arg) {
   if (isSaved) {
     const index = savedMovies.findIndex(movie => movie.id === isSaved.id);
     const deleted = savedMovies.splice(index, 1);
-    console.log('onWatchedClick   deleted', deleted);
     localStore.save(WATCHED_KEY, savedMovies);
     watchedBtn.textContent = 'Add to watched';
     console.log(savedMovies);
@@ -21,7 +20,6 @@ export function onWatchedClick(evt, arg) {
       if (myLibrary) {
         myLibrary.style.height = '100vh';
       }
-      
     }
   } else {
     savedMovies.unshift(arg);
