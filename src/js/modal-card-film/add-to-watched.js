@@ -15,8 +15,11 @@ export function onWatchedClick(evt, arg) {
     const deleted = savedMovies.splice(index, 1);
     localStore.save(WATCHED_KEY, savedMovies);
     watchedBtn.textContent = 'Add to watched';
-    if (savedMovies.length === 0 & myLibrary) {
-      myLibrary.style.height = '100vh';
+    console.log(savedMovies);
+    if (savedMovies.length === 0) {
+      if (myLibrary) {
+        myLibrary.style.height = '100vh';
+      }
     }
   } else {
     savedMovies.unshift(arg);
